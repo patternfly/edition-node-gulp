@@ -5633,9 +5633,6 @@ tbody.collapse.in {
   margin-top: 0;
   border-top: 0; }
 
-.nav-tabs + .pf-nav-tabs .nav-link {
-  font-size: 0.875em; }
-
 .pf-nav-tabs .nav-link {
   border-width: 0 0 2px 0;
   border-color: transparent;
@@ -5649,8 +5646,13 @@ tbody.collapse.in {
       border-color: #0088ce; }
 
 .pf-nav-tabs .dropdown-menu {
-  margin-left: 1rem;
   margin-top: -1px; }
+
+.nav-tabs + .pf-nav-tabs .nav-link {
+  font-size: 0.875em; }
+
+.nav-tabs + .pf-nav-tabs .dropdown-menu {
+  margin-left: 1rem; }
 
 .navbar {
   position: relative;
@@ -6402,13 +6404,16 @@ h6 .tag {
 .pf-alert__text {
   flex-grow: 1; }
 
-.alert-dismissible .close {
-  order: 1;
-  top: 0;
-  margin-left: 1rem;
-  opacity: 0.85; }
-  .alert-dismissible .close:focus, .alert-dismissible .close:hover {
-    opacity: 1; }
+.alert-dismissible {
+  padding-right: 1rem; }
+  .alert-dismissible .close {
+    order: 1;
+    top: 0;
+    right: 0;
+    margin-left: 1rem;
+    opacity: 0.85; }
+    .alert-dismissible .close:focus, .alert-dismissible .close:hover {
+      opacity: 1; }
 
 @keyframes progress-bar-stripes {
   from {
@@ -6782,6 +6787,46 @@ button.close {
 .pf-view-selector__btn-link.active {
   color: #0088ce;
   cursor: default; }
+
+.pf-toast {
+  background-color: #fff;
+  border-color: #bbb;
+  box-shadow: 0 0.15em 0.4em rgba(3, 3, 3, 0.2); }
+
+.pf-toast__icon {
+  margin: calc(-0.75rem - 1px) 1rem calc(-0.75rem - 1px) calc(-1.25rem - 1px);
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  box-shadow: 0 0.1em 0.2em rgba(3, 3, 3, 0.1); }
+  .pf-toast__icon:before {
+    color: rgba(255, 255, 255, 0.74); }
+  .alert-success .pf-toast__icon {
+    background-color: #3f9c35; }
+  .alert-info .pf-toast__icon {
+    background-color: #8b8d8f; }
+  .alert-warning .pf-toast__icon {
+    background-color: #ec7a08; }
+  .alert-danger .pf-toast__icon {
+    background-color: #cc0000; }
+
+.pf-toast__action {
+  margin-left: 1rem; }
+
+.pf-toasts-container {
+  position: fixed;
+  right: 1.5rem;
+  top: 1.5rem;
+  z-index: 1050;
+  margin-left: 1.5rem; }
+  @media (min-width: 768px) {
+    .pf-toasts-container {
+      max-width: 50%; } }
+  @media (min-width: 992px) {
+    .pf-toasts-container {
+      max-width: 33.1%; } }
+  .pf-toasts-container .pf-toast {
+    clear: both;
+    float: right; }
 
 /*!
  * Patternfly Shame

@@ -23,9 +23,12 @@
 }
 
 .alert-dismissible {
+  padding-right: $spacer;
+
   .close {
     order: 1;
     top: 0;
+    right: 0;
     margin-left: $spacer;
     opacity: $pf-opacity-dark;
 

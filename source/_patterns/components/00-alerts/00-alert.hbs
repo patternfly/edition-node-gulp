@@ -1,5 +1,10 @@
-<div class="alert {{ alertClass }}" role="alert">
-  <span class="pf-alert__icon pficon {{ alertIcon }}"></span>
+<div class="alert {{ alertClass }}{{#if alertDismissible}} alert-dismissible{{/if}}" role="alert">
+{{#if alertDismissible}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span class="pficon-close" aria-hidden="true"></span>
+  </button>
+{{/if}}
+  <span class="pf-alert__icon {{ alertIcon }}" aria-label="{{ alertType }}"></span>
   <div class="pf-alert__text">
     <strong>{{ alertBoldText }}</strong> {{ alertText }} <a href="#" class="alert-link">{{ alertLinkText }}</a>.
   </div>
