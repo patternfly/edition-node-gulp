@@ -27,51 +27,41 @@
 
 <body class="">
 
-  <div class="card pf-card  ">
-    <div class="card-block">
-      <h4 class="card-title">Card Footer with Dropdown</h4>
-      <p class="card-text">This card has a Footer and a dropdown menu in the footer.</p>
-    </div>
-    <div class="card-footer text-muted">
-      <div class="dropdown  pull-right" aria-labelledby="Dropdown">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </div>
-      Card Footer
-    </div>
-  </div>
+  <ul class="nav nav-tabs ">
+    <li role="presentation" class="nav-item"><a href="#" class="nav-link active">Tab One</a></li>
+    <li role="presentation" class="nav-item"><a href="#" class="nav-link">Tab Two</a></li>
+    <li role="presentation" class="nav-item"><a href="#" class="nav-link">Tab Three</a></li>
+    <li role="presentation" class="nav-item"><a href="#" class="nav-link disabled">Disabled</a></li>
+    <li role="presentation" class="nav-item"><a href="#" class="nav-link">Tab Five</a></li>
+
+
+  </ul>
 
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
     {
       "cssEnabled": false,
-      "patternLineageExists": true,
-      "patternLineages": [{
-        "lineagePattern": "components-card",
-        "lineagePath": "../../patterns/components-03-cards-00-card/components-03-cards-00-card.rendered.html"
+      "patternLineageExists": false,
+      "patternLineages": [],
+      "lineage": [],
+      "patternLineageRExists": true,
+      "patternLineagesR": [{
+        "lineagePattern": "basics-tabs-variations",
+        "lineagePath": "../../patterns/basics-tabs-tabs-variations/basics-tabs-tabs-variations.rendered.html"
       }],
-      "lineage": [{
-        "lineagePattern": "components-card",
-        "lineagePath": "../../patterns/components-03-cards-00-card/components-03-cards-00-card.rendered.html"
+      "lineageR": [{
+        "lineagePattern": "basics-tabs-variations",
+        "lineagePath": "../../patterns/basics-tabs-tabs-variations/basics-tabs-tabs-variations.rendered.html"
       }],
-      "patternLineageRExists": false,
-      "patternLineagesR": [],
-      "lineageR": [],
       "patternLineageEExists": true,
-      "patternDesc": "",
+      "patternDesc": "<h2>Overview</h2>\n<p>See <a href=\"http://v4-alpha.getbootstrap.com/components/navs/#tabs\">Bootstrap tabs</a> for complete tabs documentation.</p>\n<h2>Accessibility</h2>\n<h2>Usage</h2>\n<table>\n<thead>\n<tr>\n<th>Class</th>\n<th>Usage</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>.pf-nav-tabs</code> <strong>Applied to:</strong> <code>ul</code></td>\n<td><strong>Outcome:</strong> Displays the menu in Patternfly style rather than the default tabs <strong>Required:</strong> No <strong>Remarks:</strong> Always use it with <code>.nav</code> and <code>.nav-tabs</code>.</td>\n</tr>\n</tbody>\n</table>\n",
       "patternBreadcrumb": {
-        "patternType": "components",
-        "patternSubtype": "cards"
+        "patternType": "basics",
+        "patternSubtype": "tabs"
       },
       "patternExtension": "hbs",
-      "patternName": "Card Footer Dropdown",
-      "patternPartial": "components-card-footer-dropdown",
+      "patternName": "Tabs",
+      "patternPartial": "basics-tabs",
       "patternState": "",
       "patternEngineName": "handlebars",
       "extraOutput": {}
