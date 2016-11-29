@@ -1,7 +1,8 @@
-<div class="dropdown {{ dropdownState }} {{#if pullright}}pull-right{{/if}}" aria-labelledby="{{ dropdownAriaLabelledby }}">
+<div class="dropdown {{ dropdownState }} {{#if isKebab}}pf-dropdown--kebab{{/if}} {{#if pullright}}pull-right{{/if}}" aria-labelledby="{{ dropdownAriaLabelledby }}">
+  {{#if isKebab}} {{> basics-icon-button btnText="" btnClass="btn-link" iconFamily="fa" iconName="fa-ellipsis-v" iconModifier="" ariaLabeledBy="Kebab"}} {{else}}
   <button type="button" class="btn {{ btnClass }} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    {{ dropdownText }}
-  </button>
+        {{ dropdownText }}
+    </button> {{/if}}
   <div class="dropdown-menu {{#if pullright}}dropdown-menu-right{{/if}}">
     {{#each dropdownList}}
     <a class="dropdown-item" href="#">{{this}}</a> {{/each}}

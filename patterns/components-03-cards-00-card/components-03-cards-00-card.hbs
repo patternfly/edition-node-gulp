@@ -1,16 +1,33 @@
-<div class="card pf-card {{#if textCenter}}text-xs-center{{/if}} {{#if cardAccent}}pf-card--accented{{/if}}">
+{{!-- textCenter - when set to true, displays all text center-aligned in the card. cardAccent - when set to true, displays an accent color on top of the card. multiselect - when set to true, enables the card for multi-selection. singleselect - ewhen set
+to true, nables the card for single-selection. selected - when set to true, displays the card as selected; only use when multiselect or singleselect are set to true. cardHeader -when set to true, displays a card header, and the card title is displayed
+in the header. cardKebab - when set to true, displays a kebab; when cardHeader is set to true, the kebab displays in the header. cardHeaderDropdown - when set to true, displays a dropdown in the header. cardTitleSize - set value to h2, h3, h4; sets the
+size of the card title. cardTitle - defines contents of the card title. noTitle - excludes the title; do not use when cardHeader is set to true. cardTitleIconLarge - when set to true, includes a large icon in the card. cardTitleIconMedium - when set to
+true, includes a medium icon in the card. cardContents - defines contents of the card, html tags can be included. cardFooter - when set to true, displays a footer. cardFooterDropdown - when set to true, displays a dropdown in the footer. cardFooterContents
+- defines contents of the card; when cardFooterDropdown is set to true, then wrap the contents with
+<p></p>. --}}
+
+<div class="card pf-card {{#if textCenter}}text-xs-center{{/if}} {{#if cardAccent}}pf-card--accented{{/if}} {{#if multiselect}}pf-card--multiselect pf-card--select{{/if}} {{#if singleselect}}pf-card--select{{/if}} {{#if selected}}active{{/if}}">
   {{#if cardHeader}}
   <div class="card-header">
-    {{#if cardHeaderDropdown}} {{> basics-dropdown dropdownText="Dropdown" pullright=true }} {{/if}}
+    {{#if multiselect}}
+    <label class="pf-card__checkbox">
+        <input type="checkbox" {{#if selected}}checked{{/if}}>
+      </label> {{/if}} {{#if cardKebab}} {{> basics-dropdown isKebab=true pullright=true }} {{/if}} {{#if cardHeaderDropdown}} {{> basics-dropdown dropdownText="Dropdown" pullright=true }} {{/if}}
     <{{cardTitleSize}} class="card-title">{{{cardTitle}}}</{{cardTitleSize}}>
   </div>
   <div class="card-block">
     {{else}}
     <div class="card-block">
-      {{#if cardTitleIconLarge}} {{> basics-icon iconFamily="pficon" iconName="pficon-middleware" iconModifier="pf-icon--circle pf-icon--lg mb-pf-lg" }} {{/if}} {{#if cardTitleIconMedium}} {{> basics-icon iconFamily="pficon" iconName="pficon-middleware" iconModifier="pf-icon--circle
-      pf-icon--md mb-pf-md" }} {{/if}}
+      {{#if multiselect}}
+      <label class="pf-card__checkbox">
+        <input type="checkbox" {{#if selected}}checked{{/if}}>
+      </label> {{/if}} {{#if cardTitleIconLarge}}
+      <div class="pf-card__top-element">{{> basics-icon iconFamily="pficon" iconName="pficon-middleware" iconModifier="pf-icon--circle pf-icon--lg" }}</div>
+      {{/if}} {{#if cardTitleIconMedium}}
+      <div class="pf-card__top-element">{{> basics-icon iconFamily="pficon" iconName="pficon-middleware" iconModifier="pf-icon--circle pf-icon--md" }}</div>
+      {{/if}} {{#if cardKebab}} {{> basics-dropdown isKebab=true pullright=true }} {{/if}} {{#if noTitle}} {{else}}
       <{{cardTitleSize}} class="card-title">{{{cardTitle}}}</{{cardTitleSize}}>
-      {{/if}} {{#if @partial-block}} {{> @partial-block}} {{else}}
+      {{/if}} {{/if}} {{#if @partial-block}} {{> @partial-block}} {{else}}
       <p class="card-text">{{{cardContents}}}</p>
       {{/if}}
     </div>
