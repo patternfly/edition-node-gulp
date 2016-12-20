@@ -1,0 +1,26 @@
+<div class="row pf-toolbar">
+    <div class="pf-toolbar__group form-inline">
+      <div class="pf-toolbar__group__item form-group">
+        {{> basics-dropdown dropdownText= "Name" btnClass="btn-secondary" }}
+        {{> basics-input}}
+      </div>
+      <div class="pf-toolbar__group__item form-group">
+        {{> basics-dropdown dropdownText= "Name" btnClass="btn-secondary" }}
+        {{> basics-icon-button btnText="" btnClass="btn-link" iconFamily="fa" iconName="fa-sort-alpha-asc" iconModifier="" ariaLabeledBy="Ascending Alphabetical Sort"}}
+      </div>
+      <div class="pf-toolbar__group__item form-group">
+        {{> basics-button btnText="Action" btnClass="btn-secondary" }}
+        {{> basics-button btnText="Action" btnClass="btn-secondary" }}
+        {{> basics-icon-button btnText="" btnClass="btn-link" iconFamily="fa" iconName="fa-ellipsis-v" iconModifier="" ariaLabeledBy="Kebab"}}
+      </div>
+    </div>
+
+    <div class="pf-toolbar__group">
+      <div class="pf-toolbar__group__item">
+        {{> basics-icon-button btnText="" btnClass="btn-link" iconFamily="fa" iconName="fa-search" iconModifier="" ariaLabeledBy="Search"}}
+      </div>
+      <div class="pf-toolbar__group__item">
+        {{> components-view-selector }}
+      </div>
+    </div>
+</div><!-- /row -->

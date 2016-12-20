@@ -1,0 +1,20 @@
+<div class="row pf-toolbar">
+  <div class="pf-toolbar__group">
+      <h5 class="pf-toolbar__subgroup__item">40 Results</h5>
+      <p class="pf-toolbar__subgroup__item">Active filters:
+
+{{!-- IMPORTANT NOTE: This is a copy of filter-list.hbs as a temporary workaround. When a handlebars helper is created as a solution to using listitems, this should be replaced with the following: --}}
+{{!-- {{> components-filter-list }} --}}
+        <ul class="list-inline">
+          {{# listitems.five }}
+            <li class="list-inline-item">
+              {{> basics-tag tagText=word tagClass="tag-info" tagDismissable="true" }}
+            </li>
+          {{/ listitems.five }}
+      </ul>
+      </p>
+      <p class="pf-toolbar__subgroup__item"><a href="#">Clear All Filters</a></p>
+    </div><!-- pf-toolbar__right -->
+
+  </div><!-- /col -->
+</div><!-- /row -->

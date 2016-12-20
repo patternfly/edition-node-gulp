@@ -1,0 +1,26 @@
+.pf-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding-right: ($grid-gutter-width-base / 2);
+  padding-left: ($grid-gutter-width-base / 2);
+}
+
+// This is a grouping of items in a toolbar
+.pf-toolbar__group {
+  align-items: baseline;
+  display:inline-flex;
+}
+
+.pf-toolbar__group__item {
+  display: inline-block;
+  padding: 0 $pf-spacer-xs;
+}
+
+.pf-toolbar__subgroup__item {
+  display: inline-block;
+  padding: 0 $pf-spacer-xs;
+}
+
+.pf-toolbar__group__item + .pf-toolbar__group__item {
+  border-left: 1px solid $color-pf-black-900;
+}

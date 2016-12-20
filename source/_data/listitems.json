@@ -70,7 +70,8 @@
       "long": "20",
       "short": "20"
     },
-    "seconds": "31"
+    "seconds": "31",
+    "word": "alpha"
   },
   "2": {
     "title": "Veggies sunt bona vobis, proinde vos postulo",
@@ -143,7 +144,8 @@
       "long": "20",
       "short": "20"
     },
-    "seconds": "31"
+    "seconds": "31",
+    "word": "bravo"
   },
   "3": {
     "title": "Bacon ipsum dolor sit amet turducken strip steak beef ribs shank",
@@ -216,7 +218,8 @@
       "long": "45",
       "short": "45"
     },
-    "seconds": "11"
+    "seconds": "11",
+    "word": "charlie"
   },
   "4": {
     "title": "Whatever swag accusamus occupy, gentrify butcher tote bag",
@@ -289,7 +292,8 @@
       "long": "14",
       "short": "14"
     },
-    "seconds": "52"
+    "seconds": "52",
+    "word": "delta"
   },
   "5": {
     "title": "Marshall McLuhan Colbert bump backpack journalist vast wasteland Romenesko CPM",
@@ -362,7 +366,8 @@
       "long": "37",
       "short": "37"
     },
-    "seconds": "24"
+    "seconds": "24",
+    "word": "echo"
   },
   "6": {
     "title": "Thunder, thunder, thundercats, Ho!",
@@ -435,7 +440,8 @@
       "long": "37",
       "short": "37"
     },
-    "seconds": "33"
+    "seconds": "33",
+    "word": "foxtrot"
   },
   "7": {
     "title": "Yeah, I like animals better than people sometimes",
@@ -508,7 +514,8 @@
       "long": "12",
       "short": "12"
     },
-    "seconds": "47"
+    "seconds": "47",
+    "word": "golf"
   },
   "8": {
     "title": "Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo",
@@ -581,7 +588,8 @@
       "long": "42",
       "short": "42"
     },
-    "seconds": "21"
+    "seconds": "21",
+    "word": "hotel"
   },
   "9": {
     "title": "Rebel Mission to Ord Mantell",
@@ -654,7 +662,8 @@
       "long": "04",
       "short": "4"
     },
-    "seconds": "37"
+    "seconds": "37",
+    "word": "india"
   },
   "10": {
     "title": "Help, help, I'm being repressed!",
@@ -727,7 +736,8 @@
       "long": "51",
       "short": "51"
     },
-    "second": "19"
+    "second": "19",
+    "word": "juliett"
   },
   "11": {
     "title": "Danish danish candy canes bonbon cheesecake danish marzipan",
@@ -800,7 +810,8 @@
       "long": "55",
       "short": "55"
     },
-    "seconds": "12"
+    "seconds": "12",
+    "word": "kilo"
   },
   "12": {
     "title": "Cottage cheese brie lancashire. Boursin when the cheese comes out.",
@@ -873,6 +884,7 @@
       "long": "34",
       "short": "34"
     },
-    "seconds": "56"
+    "seconds": "56",
+    "word": "lima"
   }
 }

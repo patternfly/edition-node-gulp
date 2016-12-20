@@ -1,4 +1,9 @@
 /*!
  * Patternfly Shame
- * The nest fot all our shamefull code.
+ * The nest for all our shameful code.
  */
+
+// When creating the toolbar, this is the only way I can get the dropdown and button to be on the same line. (Sarah)
+.form-inline .form-group .dropdown {
+  display: inline-block;
+}
