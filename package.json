@@ -27,7 +27,8 @@
   "author": "Brian Muenzenmeyer",
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
-    "gulp": "gulp -- "
+    "gulp": "gulp -- ",
+    "publish-travis": "publish-ghpages.sh -t public"
   },
   "license": "MIT",
   "engines": {
@@ -36,6 +37,7 @@
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.5",
     "font-awesome": "^4.7.0",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "patternfly-eng-publish": "0.0.3"
   }
 }

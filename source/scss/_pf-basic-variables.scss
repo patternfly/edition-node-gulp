@@ -1,5 +1,21 @@
-// Variables
+/*
+Copyright 2016 Red Hat, Inc
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 //
+// PatternFly Variables
+// --------------------------------------------------
 // Copy settings from this file into the provided `_custom.scss` to override
 // the Bootstrap defaults without modifying key, versioned files.
 
@@ -405,13 +421,14 @@ $breadcrumb-divider:            "»";
 // Cards
 // $card-spacer-x:            1.25rem !default;
 // $card-spacer-y:            .75rem !default;
-$card-border-width:        1px;
-$card-border-color:        $color-pf-black-300;
-$card-cap-bg:              $color-pf-black-150;
+$card-border-width:           1px;
+$card-border-color:           $color-pf-black-300;
+$card-cap-bg:                 $color-pf-black-150;
 
-$pf-card-border-color:     $color-pf-black-300;
-$pf-card-cap-bg:           $color-pf-white;
-$pf-card-footer-bg:        $color-pf-black-100;
+$pf-card-border-color:        $color-pf-black-300;
+$pf-card-cap-bg:              $color-pf-white;
+$pf-card-footer-bg:           $color-pf-black-100;
+$pf-card-border-color-active: $color-pf-blue-300;
 
 
 //$card-bg:                  $color-pf-white;

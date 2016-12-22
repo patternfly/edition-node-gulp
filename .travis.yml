@@ -29,4 +29,4 @@ script:
   - npm run gulp patternlab:build
 
 after_success:
-  - ./scripts/publish.sh -t public
+  - npm run publish-travis
