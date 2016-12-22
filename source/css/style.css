@@ -28,3 +28,19 @@
    font-size: 1.2rem;
    /*text-transform: uppercase;*/
  }
+
+/* Hack to make toast notifications not fixed in components page. */
+
+#components-toast-notification-styles {
+  height: 425px;
+}
+
+@media (min-width: 768px) {
+  #components-toast-notification-styles {
+    height: 333px;
+  }
+}
+
+.sg-pattern-example { position: relative; }
+
+.sg-pattern-example .pf-toasts-container { position: absolute; }

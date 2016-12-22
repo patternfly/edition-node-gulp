@@ -4,6 +4,8 @@
   "alertBoldText": "Great Job!",
   "alertText": "This is really working out",
   "alertLinkText": "great for us",
+  "alertType": "Success",
+  "toastText": "<strong>server_abc</strong> has been added to main server group.",
   "key": "value",
   "key2": "use this for variables you want to load globally",
   "title": "Nullizzle shizznit velizzle, hizzle, suscipit own yo', gravida vizzle, arcu.",

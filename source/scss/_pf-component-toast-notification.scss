@@ -1,0 +1,37 @@
+//
+// Toast Notifications
+// --------------------------------------------------
+
+.pf-toast {
+  background-color: $color-pf-white;
+  border-color: $color-pf-black-400;
+  box-shadow: $pf-box-shadow-md;
+}
+
+.pf-toast__icon {
+  margin: calc(#{-$pf-spacer-xs} - #{$border-width}) $spacer calc(#{-$pf-spacer-xs} - #{$border-width}) calc(#{-$pf-spacer-md} - #{$border-width});
+  padding: $pf-spacer-xs $spacer;
+  font-size: $pf-alert-icon-font-size;
+  box-shadow: $pf-box-shadow;
+  &:before { color: transparentize(white, 0.26); }
+  .alert-success & { background-color: $brand-success; }
+  .alert-info & { background-color: $state-info-border; }
+  .alert-warning & { background-color: $brand-warning; }
+  .alert-danger & { background-color: $brand-danger; }
+}
+
+.pf-toast__action { margin-left: $spacer; }
+
+.pf-toasts-container {
+  position: fixed;
+  right: $pf-spacer-lg;
+  top: $pf-spacer-lg;
+  z-index: 1050;
+  margin-left: $pf-spacer-lg;
+  @include media-breakpoint-up(md) { max-width: 50%; }
+  @include media-breakpoint-up(lg) { max-width: 33.1%; }
+  .pf-toast {
+    clear: both;
+    float: right;
+  }
+}
