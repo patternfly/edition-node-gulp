@@ -27,7 +27,7 @@
 
 <body class="">
   <div class="table-responsive">
-    <table class="table    ">
+    <table class="table table-striped table-bordered table-hover ">
       <thead>
         <tr>
           <th>Session</th>
@@ -138,33 +138,27 @@
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
     {
       "cssEnabled": false,
-      "patternLineageExists": false,
-      "patternLineages": [],
-      "lineage": [],
-      "patternLineageRExists": true,
-      "patternLineagesR": [{
-        "lineagePattern": "basics-table-contextual-classes",
-        "lineagePath": "../../patterns/basics-table-table-contextual-classes/basics-table-table-contextual-classes.rendered.html"
-      }, {
-        "lineagePattern": "basics-table-patternfly",
-        "lineagePath": "../../patterns/basics-table-table-patternfly/basics-table-table-patternfly.rendered.html"
+      "patternLineageExists": true,
+      "patternLineages": [{
+        "lineagePattern": "basics-table",
+        "lineagePath": "../../patterns/basics-table-table/basics-table-table.rendered.html"
       }],
-      "lineageR": [{
-        "lineagePattern": "basics-table-contextual-classes",
-        "lineagePath": "../../patterns/basics-table-table-contextual-classes/basics-table-table-contextual-classes.rendered.html"
-      }, {
-        "lineagePattern": "basics-table-patternfly",
-        "lineagePath": "../../patterns/basics-table-table-patternfly/basics-table-table-patternfly.rendered.html"
+      "lineage": [{
+        "lineagePattern": "basics-table",
+        "lineagePath": "../../patterns/basics-table-table/basics-table-table.rendered.html"
       }],
+      "patternLineageRExists": false,
+      "patternLineagesR": [],
+      "lineageR": [],
       "patternLineageEExists": true,
-      "patternDesc": "<h2>Overview</h2>\n<p>This is a Bootstrap component, <a href=\"http://v4-alpha.getbootstrap.com/content/tables/\">see complete documentation here</a></p>\n",
+      "patternDesc": "<h2>Overview</h2>\n<p>PatternFly recommends using a striped, bordered, hover and responsive table.</p>\n",
       "patternBreadcrumb": {
         "patternType": "basics",
         "patternSubtype": "table"
       },
       "patternExtension": "hbs",
-      "patternName": "Table",
-      "patternPartial": "basics-table",
+      "patternName": "Table Patternfly",
+      "patternPartial": "basics-table-patternfly",
       "patternState": "",
       "patternEngineName": "handlebars",
       "extraOutput": {}

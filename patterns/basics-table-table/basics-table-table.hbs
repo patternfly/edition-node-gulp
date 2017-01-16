@@ -1,9 +1,9 @@
 <div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
+  <table class="table {{#if tableStriped}}table-striped{{/if}} {{#if tableBordered}}table-bordered{{/if}} {{#if tableHover}}table-hover{{/if}} {{#if tableSmall}}table-sm{{/if}}">
     <thead>
       <tr>
         <th>Session</th>
-        <th class="text-right">Course Number</th>
+        <th>Course Number</th>
         <th>Title</th>
         <th>Level</th>
         <th>Course Format</th>
@@ -21,7 +21,7 @@
         <td>T </td>
         <td>20115</td>
       </tr>
-      <tr>
+      <tr class="{{#if tableActive}}table-active{{/if}}">
         <td><a href="#">Winter 2014 Full-Term Session</a></td>
         <td>CMN 6020</td>
         <td>Ethical Issues in Organizational Communication</td>
@@ -30,7 +30,7 @@
         <td>W </td>
         <td>21509</td>
       </tr>
-      <tr>
+      <tr class="{{#if tableSuccess}}table-success{{/if}}">
         <td><a href="#">Winter 2014 Full-Term Session</a></td>
         <td>CMN 6050</td>
         <td>Crisis Communication</td>
@@ -39,7 +39,7 @@
         <td>W </td>
         <td>20915</td>
       </tr>
-      <tr>
+      <tr class="{{#if tableInfo}}table-info{{/if}}">
         <td><a href="#">Winter 2014 Full-Term Session</a></td>
         <td>CMN 6050</td>
         <td>Crisis Communication</td>
@@ -48,7 +48,7 @@
         <td>Th </td>
         <td>21550</td>
       </tr>
-      <tr>
+      <tr class="{{#if tableWarning}}table-warning{{/if}}">
         <td><a href="#">Winter 2014 Full-Term Session</a></td>
         <td>CMN 6060</td>
         <td>Negotiation, Mediation, and Facilitation</td>
@@ -57,7 +57,7 @@
         <td>Th </td>
         <td>20119</td>
       </tr>
-      <tr>
+      <tr class="{{#if tableDanger}}table-danger{{/if}}">
         <td><a href="#">Winter 2014 Full-Term Session</a></td>
         <td>CMN 6060</td>
         <td>Negotiation, Mediation, and Facilitation</td>
