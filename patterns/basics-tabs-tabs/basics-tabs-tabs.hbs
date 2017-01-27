@@ -9,7 +9,7 @@
   <li role="presentation" class="nav-item"><a href="#" class="nav-link">Tab Five</a></li>
 
   {{#if dropdown }}
-  <li role="presentation" class="nav-item dropdown {{#if dropdownActive }}open{{/if }}">
+  <li role="presentation" class="nav-item dropdown {{#if dropdownActive }}show{{/if }}">
     <a class="nav-link dropdown-toggle active" role="button" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown" href="#">
     Dropdown
   </a>
@@ -32,7 +32,8 @@
   <li role="presentation" class="nav-item"><a href="#" class="nav-link disabled">Secondary Disabled</a></li>
   <li role="presentation" class="nav-item"><a href="#" class="nav-link">Secondary Tab Five</a></li>
   {{#if secondaryDropdown }}
-  <li role="presentation" class="nav-item dropdown {{#if secondaryDropdownActive }}open{{/if }}">
+  <li role="presentation" class="nav-item dropdown {{#if
+      secondaryDropdownActive }}show{{/if }}">
     <a class="nav-link dropdown-toggle {{#if secondaryDropdownActive}} active {{/if }}" role="button" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown" href="#">
         Secondary Menu Dropdown
       </a>
