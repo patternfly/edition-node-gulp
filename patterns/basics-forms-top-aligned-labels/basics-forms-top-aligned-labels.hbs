@@ -1,0 +1,11 @@
+<form>
+
+  {{> basics-form-group formLabel="Email" formInputType="email" formInputId="example-top-align-email" }} {{> basics-form-group formLabel="Password" formInputType="password" formInputId="example-top-align-password" }} {{> basics-form-group formTextarea=true
+  formLabel="Example textarea" }} {{> basics-form-group formSelect=true formLabel="Example select" formInputId="example-top-align-select" }} {{> basics-form-group formInputClass="form-control-file" formLabel="File Input" formInputType="file" formHelp=true
+  formHelpId="fileHelpBlock" formInputId="example-top-align-file" formHelpText="This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line." }}
+
+  <div class="form-group"> {{> basics-checkbox formLabel="Remember me" }} </div>
+
+  <div class="form-group"> {{> basics-button btnType="submit" btnText="Sign In" btnClass="btn-primary" }} </div>
+
+</form>

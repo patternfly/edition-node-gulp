@@ -1,0 +1,9 @@
+{{!-- formCheckboxInline - set it to true to create inline checkboxes --}}
+
+
+<div class="form-check {{#if formCheckboxInline}}form-check-inline{{/if}}">
+  <label class="form-check-label">
+    {{> basics-input formInputClass="form-check-input" formInputType="checkbox" formInputValue="option1" formInputId="example-checkbox" }}
+    {{ formLabel }}
+  </label>
+</div>
