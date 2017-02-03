@@ -1,0 +1,50 @@
+{{!-- pfTabsAsPrimary - displays the menu as the Patternfly style rather than default tab style tabsDropdown - adds a tab with a dropdown tabsDropdownActive - shows the dropdown tab menu open if true tabsSecondaryLevel - adds a secondary level menu tabstabsSecondaryDropdown
+- adds a dropdown tab to the secondary menu tabsSecondaryDropdownActive - shows the dropdown open if true --}}
+
+<ul class="nav nav-tabs {{#if pfTabsAsPrimary }}pf-nav-tabs{{/if }}">
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link {{#unless tabsDropdown }}active{{/unless }}">Tab One</a></li>
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link">Tab Two</a></li>
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link">Tab Three</a></li>
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link disabled">Disabled</a></li>
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link">Tab Five</a></li>
+
+  {{#if tabsDropdown }}
+  <li role="presentation" class="nav-item dropdown {{#if tabsDropdownActive }}show{{/if }}">
+    <a class="nav-link dropdown-toggle active" role="button" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown" href="#">
+    Dropdown
+  </a>
+    <div class="dropdown-menu" role="menu">
+      <a class="dropdown-item">Action</a></a>
+      <a class="dropdown-item">Another action</a></a>
+      <a class="dropdown-item">Something else here</a></a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item">Separated link</a></a>
+    </div>
+  </li>
+  {{/if }}
+
+</ul>
+{{#if tabsSecondaryLevel }}
+<ul class="nav nav-tabs pf-nav-tabs">
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link {{#unless tabsSecondaryDropdownActive }}active{{/unless }}">Secondary Tab One</a></li>
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link">Secondary Tab Two</a></li>
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link">Secondary Tab Three</a></li>
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link disabled">Secondary Disabled</a></li>
+  <li role="presentation" class="nav-item"><a href="#" class="nav-link">Secondary Tab Five</a></li>
+  {{#if tabsSecondaryDropdown }}
+  <li role="presentation" class="nav-item dropdown {{#if
+      tabsSecondaryDropdownActive }}show{{/if }}">
+    <a class="nav-link dropdown-toggle {{#if tabsSecondaryDropdownActive}} active {{/if }}" role="button" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown" href="#">
+        Secondary Menu Dropdown
+      </a>
+    <div class="dropdown-menu" role="menu">
+      <a class="dropdown-item">Action</a></a>
+      <a class="dropdown-item">Another action</a></a>
+      <a class="dropdown-item">Something else here</a></a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item">Separated link</a></a>
+    </div>
+  </li>
+  {{/if }}
+</ul>
+{{/if }}

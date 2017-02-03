@@ -12,7 +12,7 @@ true, includes a medium icon in the card. cardContents - defines contents of the
     {{#if multiselect}}
     <label class="pf-card__checkbox">
         <input type="checkbox" {{#if selected}}checked{{/if}}>
-      </label> {{/if}} {{#if cardKebab}} {{> basics-dropdown isKebab=true pullright=true }} {{/if}} {{#if cardHeaderDropdown}} {{> basics-dropdown dropdownText="Dropdown" pullright=true }} {{/if}}
+      </label> {{/if}} {{#if cardKebab}} {{> components-dropdown isKebab=true pullright=true }} {{/if}} {{#if cardHeaderDropdown}} {{> components-dropdown dropdownText="Dropdown" pullright=true }} {{/if}}
     <{{cardTitleSize}} class="card-title">{{{cardTitle}}}</{{cardTitleSize}}>
   </div>
   <div class="card-block">
@@ -25,7 +25,7 @@ true, includes a medium icon in the card. cardContents - defines contents of the
       <div class="pf-card__top-element">{{> basics-icon iconFamily="pf-icon" iconName="pf-icon-middleware" iconModifier="pf-icon--circle pf-icon--lg" }}</div>
       {{/if}} {{#if cardTitleIconMedium}}
       <div class="pf-card__top-element">{{> basics-icon iconFamily="pf-icon" iconName="pf-icon-middleware" iconModifier="pf-icon--circle pf-icon--md" }}</div>
-      {{/if}} {{#if cardKebab}} {{> basics-dropdown isKebab=true pullright=true }} {{/if}} {{#if noTitle}} {{else}}
+      {{/if}} {{#if cardKebab}} {{> components-dropdown isKebab=true pullright=true }} {{/if}} {{#if noTitle}} {{else}}
       <{{cardTitleSize}} class="card-title">{{{cardTitle}}}</{{cardTitleSize}}>
       {{/if}} {{/if}} {{#if @partial-block}} {{> @partial-block}} {{else}}
       <p class="card-text">{{{cardContents}}}</p>
@@ -33,7 +33,7 @@ true, includes a medium icon in the card. cardContents - defines contents of the
     </div>
     {{#if cardFooter}}
     <div class="card-footer text-muted">
-      {{#if cardFooterDropdown}} {{> basics-dropdown dropdownText="Dropdown" pullright=true }} {{/if}} {{{cardFooterContents}}}
+      {{#if cardFooterDropdown}} {{> components-dropdown dropdownText="Dropdown" pullright=true }} {{/if}} {{{cardFooterContents}}}
     </div>
     {{/if}}
   </div>
