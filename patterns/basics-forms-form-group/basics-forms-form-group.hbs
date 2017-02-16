@@ -2,13 +2,32 @@
 
 <div class="form-group {{#if formRightAligned}}row{{/if}} {{ formGroupModifierClass }}">
 
-  <label class="form-control-label {{#if formRightAligned}}col-sm-2 col-form-label{{/if}}" for="{{formInputId}}">{{ formLabel }}</label> {{#if formRightAligned}}
-  <div class="col-sm-10">{{/if}} {{#if formTextarea}}
-    <textarea class="form-control" id="{{ formInputId }}" rows="3"></textarea> {{else formStaticControl}}
-    <p class="form-control-static">{{ formStaticControlText }}</p>
-    {{else if formSelect }} {{> basics-select }} {{else}} {{> basics-input }} {{/if}} {{#if formFeedbackMessage }}
-    <div class="form-control-feedback">Feedback message</div>
-    {{/if}} {{#if formHelp }}
-    <small class="form-text text-muted" id="{{formHelpId}}">{{ formHelpText }}</small> {{/if}} {{#if formRightAligned}}</div>{{/if}}
+  <label class="form-control-label {{#if formRightAligned}}col-sm-2 col-form-label{{/if}}" for="{{formInputId}}" {{#if formStaticControl}}id="{{labelID}}" "{{/if}}>{{ formLabel }}</label>
+
+  {{#if formRightAligned}}<div class="col-sm-10 ">{{/if}}
+
+    {{#if formTextarea}}
+      <textarea class="form-control " id="{{ formInputId }} " rows="3 "
+      {{#if formHelp}} aria-describedby="{{formHelpId}} "{{/if}}
+      {{#if formFeedbackMessage }} aria-describedby="{{formMessageId}} "{{/if}}
+      {{#if hasError}} aria-invalid="true "{{/if}}>
+      </textarea>
+    {{else formStaticControl}}
+      <p class="form-control-static " aria-labelledby="{{labelID}} ">{{ formStaticControlText }}</p>
+    {{else if formSelect }}
+      {{> basics-select }}
+    {{else}}
+      {{> basics-input }}
+    {{/if}}
+
+    {{#if formFeedbackMessage }}
+      <div class="form-control-feedback " id="{{formMessageId}} ">Feedback message</div>
+    {{/if}}
+
+    {{#if formHelp }}
+      <small class="form-text text-muted " id="{{formHelpId}} ">{{ formHelpText }}</small>
+    {{/if}}
+
+    {{#if formRightAligned}}</div>{{/if}}
 
 </div>

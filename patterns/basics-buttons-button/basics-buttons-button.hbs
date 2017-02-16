@@ -1,4 +1,4 @@
-<button class="btn {{ btnClass }}" aria-labelledby="{{ btnAriaLabelledby }}" type="{{ btnType }}">
+<button class="btn {{ btnClass }}" {{#if btnAriaLabel}}aria-label="{{ btnAriaLabel }}" {{/if}}type="{{ btnType }}" {{#if tooltip}} data-toggle="tooltip" data-placement="right" title="{{tooltip}}" {{/if}} {{attributes}}>
  {{#if @partial-block}}
    {{> @partial-block }}
  {{/if}}

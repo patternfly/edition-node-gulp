@@ -1,2 +1,2 @@
-<input class="{{ formInputClass }} {{ formInputModifierClass }}" id="{{formInputId}}" type="{{ formInputType}}" value="{{ formInputValue }}" placeholder="{{ formInputPlaceholder }}" {{#if formDisabled}}disabled{{/if}} {{#if formHelp}} aria-describedby="{{formHelpText}}"
-  {{/if}}>
+<input class="{{ formInputClass }} {{ formInputModifierClass }}" id="{{formInputId}}" type="{{ formInputType}}" value="{{ formInputValue }}" placeholder="{{ formInputPlaceholder }}" {{#if formDisabled}}disabled{{/if}} {{#if formHelp}} aria-describedby="{{formHelpId}}"
+  {{/if}} {{#if formFeedbackMessage }} aria-describedby="{{formMessageId}}" {{/if}} {{#if hasError}} aria-invalid="true" {{/if}}>
