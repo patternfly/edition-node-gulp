@@ -1,0 +1,13 @@
+<li class="nav-item {{#if dropdown}}dropdown show{{/if}}">
+  <a class="nav-link {{#if active}}active{{/if}} {{#if dropdown}}dropdown-toggle{{/if}}" href="#" {{#if dropdown}}data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" {{/if}}>
+      {{#if linkIcon}}<span class="{{ iconFamily }} {{ iconName }}" aria-hidden="true"></span>{{/if}}{{{linkText}}}
+    </a> {{#if dropdown}}
+  <div class="dropdown-menu dropdown-menu-right" aria-label="{{linkText}}">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+  {{/if}}
+</li>

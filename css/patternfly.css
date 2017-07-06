@@ -5181,8 +5181,9 @@ limitations under the License.
 
 .btn-link .fa, .btn-link .pf-icon {
   color: #292e34; }
-  .btn-link .fa:focus, .btn-link .fa:active, .btn-link .fa:hover, .btn-link .pf-icon:focus, .btn-link .pf-icon:active, .btn-link .pf-icon:hover {
-    color: #0088ce; }
+
+.btn-link:focus .fa, .btn-link:focus .pf-icon, .btn-link:active .fa, .btn-link:active .pf-icon, .btn-link:hover .fa, .btn-link:hover .pf-icon {
+  color: #0088ce; }
 
 .fade {
   opacity: 0;
@@ -6791,6 +6792,98 @@ limitations under the License.
   .pf-view-selector__btn-link.active .fa, .pf-view-selector__btn-link.active .pf-icon {
     color: #0088ce;
     cursor: default; }
+
+/*
+Copyright 2016 Red Hat, Inc
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+.pf-masthead {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #030303;
+  border-top: 3px solid #39a5dc;
+  color: #d1d1d1;
+  min-height: 1rem; }
+  @media (min-width: 768px) {
+    .pf-masthead {
+      padding-left: 15px; } }
+
+.pf-masthead__skip {
+  display: none; }
+  @media (min-width: 992px) {
+    .pf-masthead__skip {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: -999em;
+      color: #d1d1d1;
+      font-size: 0.75rem;
+      margin-left: 0.875rem;
+      padding-left: 0.875rem;
+      padding-right: 0.875rem; }
+      .pf-masthead__skip:focus {
+        position: static;
+        order: 99;
+        color: #d1d1d1;
+        background: #292e34; } }
+
+.pf-masthead__section {
+  display: flex;
+  flex: 0 0 auto; }
+
+.pf-masthead__navicon .btn {
+  min-height: 48px; }
+
+.pf-masthead__navicon .fa {
+  color: #d1d1d1; }
+
+@media (min-width: 768px) {
+  .pf-masthead__navicon {
+    display: none; } }
+
+.pf-masthead__brand {
+  align-self: center;
+  padding: 0.1875rem 0; }
+  .pf-masthead__brand img {
+    margin-right: 0.4375rem; }
+
+.pf-masthead__brand__icon {
+  margin: 0.1875rem 0; }
+
+@media (max-width: 767px) {
+  .pf-utilities {
+    display: none; } }
+
+.pf-utilities .nav-item {
+  display: flex;
+  border-left: 1px solid #4d5258; }
+
+.pf-utilities .nav-link {
+  display: flex;
+  align-items: center;
+  color: #d1d1d1;
+  font-size: 0.75rem;
+  padding: 0 0.875rem; }
+  .pf-utilities .nav-link:hover {
+    background: #292e34; }
+
+.pf-utilities .pf-icon, .pf-utilities .fa {
+  margin-right: 0.1875rem; }
+
+.pf-utilities .nav-item + .nav-item,
+.pf-utilities .nav-link + .nav-link {
+  margin-left: 0; }
 
 /*
 Copyright 2016 Red Hat, Inc
