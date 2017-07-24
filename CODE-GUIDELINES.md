@@ -4,10 +4,15 @@ Please enforce these guidelines at all times. Small or large, call out what's in
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
-This set of rules generate some constraints and conventions. If you ran into instances where a convention isn’t obvious or a solution could be handled in a few different ways, contact the PatternFly community and have a conversation about how to handle it and update this guidelines when needed.
+This set of rules generate some constraints and conventions. If you ran into instances where a convention isn’t obvious or a solution could be handled in a few different ways, contact the PatternFly community, have a conversation about how to handle it and update this guidelines when needed.
 
+<!--  
+// TODO
+// Rules to write handlbars on patternlab
+// Create table of browsers we support
+-->
 
-## Table of content (WIP)
+## Table of content
 
 - HTML
   - [Syntax](#syntax)
@@ -16,6 +21,8 @@ This set of rules generate some constraints and conventions. If you ran into ins
 
 - CSS
   - [Syntax](#syntax-1)
+  - [Writing selectors](#writing-selectors)
+  - [Modifications and extension](#modifications-and-extension)
   - [Declaration order](#declaration-order)
   - [Prefixed properties](#prefixed-properties)
   - [Single declarations](#single-declarations)
@@ -23,6 +30,8 @@ This set of rules generate some constraints and conventions. If you ran into ins
   - [Comment and Organization](#comment-and-organization)
   - [Naming Selectors](#naming-selectors)
   - [Specificity](#specificity)
+  - [Bootstrap](#bootstrap)
+  - [Typography](#typography)
   - [Spacing](#spacing)
   - [Shadows](#shadows)
   - [Gradients](#gradients)
@@ -139,9 +148,9 @@ For example:
 - End all declarations with a semi-colon, even the last one.
 - Comma-separated property values should include a space after each comma (e.g., `box-shadow`).
 - Don't include spaces after commas within `rgb()`, `rgba()`, `hsl()`, `hsla()`, or `rect()` values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).
-- Lowercase all hex values, e.g., `#fff`. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.
+- Lowercase all hex values, e.g., `#fff`.
 - Use shorthand hex values where available, e.g., `#fff` instead of `#ffffff`.
-- Quote attribute values in selectors, e.g., `input[type="text"]`.  They’re only optional in some cases, and it’s a good practice for consistency.
+- Quote attribute values in selectors, e.g., `input[type="text"]`.
 - Don't prefix property values or color parameters with a leading zero (e.g., `.5` instead of `0.5` and `-.5em` instead of `-0.5em`).
 - Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
 
@@ -157,7 +166,7 @@ For example:
 
 // Good
 .selector,
-.selector__element,
+.selector_element,
 .selector[type="text"] {
   padding: 15px;
   margin-bottom: 15px;
@@ -165,6 +174,109 @@ For example:
   box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
 ```
+
+<!-- ============================================================ -->
+
+## Writing selectors
+
+- Every element has a class, never use type selectors.
+- Bring selector as close to the element as possible (see [BEM](#bem)).
+- Every element has a single, unique, component-scoped source of truth.
+- Only bind CSS onto CSS-based classes.
+- Don't write DOM-like selector.
+- Don't bind CSS onto data- attributes.
+
+```sass
+// Bad
+.selector ul li {
+  ...
+}
+
+// Good
+.selector_item {
+  ...
+}
+```
+
+### Single Responsibility Principle
+
+Each selector has a single responsability. They are be granular, modular, flexible and they do one thing, one thing only and do that thing very well.
+
+```sass
+// Bad
+.component-login {
+  display: inline-block; // base
+  padding: 2em; // structural
+  background-color: green; //cosmentic
+  color: white; //cosmentic
+}
+
+// Good
+.pf-component {
+  display: inline-block;
+}
+
+.pf-component--large {
+  padding: 2em;
+}
+
+.pf-component--positive {
+  background-color: green;
+  color: white;
+}
+```
+
+Selectors fall into 3 categories:
+
+- Components
+- Layouts
+- Utilities
+
+#### Layout
+
+Layout are containers concern about it's children vertical and horizontal alignment and spacing.
+
+<!-- // Layouts are prefixed with `-l` for example `.pf-l-grid_item`. -->
+
+
+#### Components
+
+Components are modular and independent structures concern about how a thing looks.
+
+- A component always touches all four sides of its parent container. No element will have top or left margins and all last children (right or bottom) will have their margins cleared.
+- The component itself never has widths or floats.
+- Elements inside a component never use top margins. The first element touches the top of its component.
+
+<!-- // Components are prefixed with `-c` for example `.pf-c-mast-head`. -->
+
+
+#### Utilities
+
+Utility classes have the single purpose to reduce the frequency of highly repetitive declarations.
+
+<!-- // Utility are prefixed with `-u for example `.pf-c-mast-head`. -->
+
+
+<!-- ============================================================ -->
+
+## Modifications and extension
+
+Keep maintainability in mind, it's better to create a new single purpose components than extending an existing one.
+
+### PatternFly is open for extension, close for modifications
+
+Since PatternFly is a dependency, always write CSS open for extension and close for modifications.
+
+This will protect our users from undesired regressions, conflicts and collisions.
+
+- Don't change anything unless its a bug, only go back to fix errors.
+- Don't do mutations: always avoid context selectors.
+
+### When to create a new component?
+
+As a general rule create extension to an element with BEM modifiers if it’s a change of color or scale, if the change generates a new entity, then create a new component.
+
+Repetition is better than the wrong abstraction.
 
 <!-- ============================================================ -->
 
@@ -256,7 +368,7 @@ To improve error detection in instances where a rule set includes only one decla
   background-image: url(../img/sprite.png);
 }
 
-.icon           { background-position: 0 0; }
+.icon            { background-position: 0 0; }
 .icon--home      { background-position: 0 -20px; }
 .icon--account   { background-position: 0 -40px; }
 ```
@@ -265,7 +377,7 @@ To improve error detection in instances where a rule set includes only one decla
 
 ## Shorthand notation
 
-Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:
+Limit the use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:
 
 - `padding`
 - `margin`
@@ -293,7 +405,7 @@ Strive to limit use of shorthand declarations to instances where you must explic
 }
 ```
 
-The Mozilla Developer Network has a great article on [shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) for those unfamiliar with notation and behaviour.
+The Mozilla Developer Network has a great article on [shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) for those unfamiliar with notation and behaviour. And also [Harry Robert's](https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/) article.
 
 <!-- ============================================================ -->
 
@@ -306,7 +418,7 @@ Be sure to write in complete sentences for larger comments and succinct phrases 
 Follow this comment structure:
 
 1. License header
-1. DocBlock
+1. Doc Block
 1. Sections
 1. Line
 
@@ -349,7 +461,7 @@ PatternFly is license under the [Apache License, Version 2.0](https://www.apache
 - Always add the Apache v2.0 license header at the top of each scss files.
 - Leave three blank lines bellow.
 
-### 2. DocBlock
+### 2. Doc Block
 
 - Includes the name of the component and an optional comment.
 - Leave three blank lines bellow.
@@ -369,6 +481,8 @@ Describes a specific line of code.
 
 ## Naming Selectors
 
+Naming is hard.
+
 Create names with useful or specific meaning via a mechanism that will not inhibit your and your team’s ability to recycle and reuse CSS.
 
 - Keep classes lowercase.
@@ -376,7 +490,6 @@ Create names with useful or specific meaning via a mechanism that will not inhib
 - Avoid excessive and arbitrary shorthand notation, e.g., `.btn` is useful for button, but `.s` doesn't mean anything.
 - Keep classes as short and succinct as possible.
 - Use meaningful names, use structural or purposeful names over presentational.
-- Use `.js-*` classes to denote behaviour (as opposed to style), but keep these classes out of your CSS.
 - Apply these same rules when creating Sass variable names.
 
 ```sass
@@ -388,8 +501,50 @@ Create names with useful or specific meaning via a mechanism that will not inhib
 // Good
 .tweet { ... }
 .card { ... }
-.twee__header { ... }
+.twee_header { ... }
 ```
+
+### BEM
+
+PatternFly follows the [BEM methodology](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/). It's a way to decouple CSS from HTML, and modularise class names so they can be extended.
+
+Class name structure follows the `{{pf-block}}_{{element}}--{{modifier}}` structure:
+
+```sass
+.pf-block_element--modifier {}
+```
+
+Example:
+
+```html
+<div class="pf-panel pf-panel--collapsible">
+  <div class="pf-panel_title">
+    <h1>Heading</h1>
+  </div>
+
+  <div class="pf-panel_content">
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+</div>
+```
+
+```sass
+.pf-panel {}                      // Block
+.pf-panel--collapsible {}         // Modifier of block
+
+.pf-panel_title {}               // Element
+
+.pf-panel_content {}             // Element
+.pf-panel_content--unpadded {}   // Modifier of element
+```
+
+Why it’s better:
+
+- All the selectors have same specificity.
+- Every element is defined via a block.
+- Every modifier is defined via a block or element.
+- Each class name imparts structural info without binding to exact HTML.
+
 
 ### Namespace
 
@@ -407,76 +562,11 @@ To avoid conflicts PatternFly prefixes all classes with “pf-”. This also hel
 }
 ```
 
-### IDs and classes
-
-Always use classes, avoid using an ID. Use classes over generic element tag for optimum rendering performance.
-
-```sass
-// Bad
-.pf-card {
-  color: #000;
-
-  h2{
-    font-size: 2em;
-  }
-}
-
-// Good
-.pf-card { color: #000; }
-
-.pf-card--title{ font-size: 2em; }
-
-```
-
-
-### BEM
-
-PatternFly follows the [BEM methodology](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/). It's a way to decouple CSS from HTML, and modularise class names so they can be extended.
-
-Class name structure follows the `{{pf-block}}__{{element}}--{{modifier}}` structure:
-
-```sass
-.pf-block__element--modifier {}
-```
-
-Example:
-
-```html
-<div class="pf-panel pf-panel--collapsible">
-  <div class="pf-panel__title">
-    <h1>Heading</h1>
-  </div>
-
-  <div class="pf-panel__content">
-    <p>Lorem ipsum dolor sit amet.</p>
-  </div>
-</div>
-```
-
-```sass
-.pf-panel {}                      // Block
-.pf-panel--collapsible {}         // Modifier of block
-
-.pf-panel__title {}               // Element
-
-.pf-panel__content {}             // Element
-.pf-panel__content--unpadded {}   // Modifier of element
-```
-
-**Why it’s better**
-
-- All the selectors have same specificity.
-- Every element is defined via a block.
-- Every modifier is defined via a block or element.
-- Each class name imparts structural info without binding to exact HTML.
-
-
-
 <!-- ============================================================ -->
 
 ## Specificity
 
-Always keep selectors as shallow as possible.
+Always keep selectors as low as possible.
 
 ```sass
 // Bad
@@ -488,22 +578,48 @@ Always keep selectors as shallow as possible.
 
 
 // Good
-.pf-search__button {}
+.pf-search_button {}
 ```
 
 ### Nesting
 
-Avoid Sass nesting, but if you must do it follow the [inception rule](http://thesassway.com/beginner/the-inception-rule) and never go more than three layers deep.
+Avoid Sass nesting, but if your really have to do it never go more than three layers deep.
 
 Limit nesting to the following use cases:
 
+1. Modifiers of a style block
 1. Media queries
-1. Parent selectors
+1. Context selectors
 1. States, pseudo-classes and pseudo-elements
-1. Overwrite Bootstrap
 
+Use the least number of selectors required to style an element. As a rule, if a selector will work without it being nested then do not nest it.
 
-For longer style blocks don't nest the modifier code as it reduced the legibility of the code.
+#### 1. Modifiers of a style block
+
+Make use of [Sass’s parent selector](https://css-tricks.com/the-sass-ampersand/ mechanism to write BEM modifiers, but don't nest element selectors:
+
+```sass
+// Bad
+.pf-nav {
+  &_item {
+    ...
+  }
+  &--modifier {
+    ...
+  }
+}
+
+// Good
+.pf-nav {
+  &--modifier {
+    ...
+  }
+}
+.pf-nav_item {
+  ...
+}
+```
+For longer style blocks don't nest the modifier as it reduced the legibility of the code.
 
 #### 2. Media queries
 
@@ -521,22 +637,21 @@ Component-specific media queries should be nested inside the component block. Us
 }
 ```
 
-#### 3. Parent selectors
+#### 3. Context selectors
 
-Make use of [Sass’s parent selector](https://css-tricks.com/the-sass-ampersand/ mechanism. This allows all rules for a given component to be maintained in one location.
+Context selectors should be avoided. If a component is different due to it's location, then you should consider creating a new component.
+
+But if you must declare a context selector make use of [Sass’s parent selector](https://css-tricks.com/the-sass-ampersand/ mechanism. This allows all rules for a given component to be maintained in one location.
 
 ```sass
-.pf-primary-nav {
-  ...
-
-  // Nav appearing in header: Right-align navigation when it appears in the header
+.pf-nav {
   .pf-header & {
-    margin-left: auto;
+    ...
   }
 }
 ```
 
-All styles for `.pf-primary-nav` should be found in one place, rather than scattered throughout multiple partial files.
+All styles for `.pf-nav` should be found in one place, rather than scattered throughout multiple partial files.
 
 #### 4. States, pseudo-classes and pseudo-elements
 
@@ -544,61 +659,80 @@ States of a component should be included as a nested element. This includes hove
 
 ```sass
 .btn {
-    background: blue;
+    background: $color;
 
     &:hover, &:focus {
-        background: red;
+        background: $lighter-color;
     }
 }
 ```
 
-#### 5. Overwrite Bootstrap
-
-Keep PatternFly code DRY. Reuse as much as you can from Bootstrap.
-
-**To overwrite Bootstrap:**
-
-- Create a new `pf-` block element to live beside the Bootstrap block instead of a modifier.
-- Be precise and accurate, introduce as little modifications as possible to achieve the design.
-- Base your styles on the original bootstrap scss file.
-- Bootstrap uses a modified version of BEM: `{{block}}-{{element}}-{{modifier}}`.
-
-```sass
-// PatternFly card block
-.pf-card {
-  border: none;
-
-  // Overwrite Bootstrap card header element
-  .card-header{
-    background: $pf-card-cap-bg;
-    border-bottom-color: $pf-card-border-color;
-  }
-
-  // Overwrite Bootstrap card footer element
-  .card-footer{
-    background: $pf-card-footer-bg;
-    border-top-color: $pf-card-border-color
-  }
-}
-
-// PatternFly card modifier
-.pf-card--accented {
-  border-top: 2px solid $pf-color-blue-300;
-}    
-```
-
 ### !important
 
-Never use `!important` to raise the specificity of a rule. In well architected CSS this should never be required. If you think it is, rewrite the rules being inherited with high specificity that are causing problems.
+Never use `!important` to raise the specificity of a rule.
+
+Use `!important` for utility classes.
 
 ```sass
 // Bad
 .some-form {
-  color: #000 !important;
+  color: $color !important;
 }
 ```
 
+<!-- ============================================================ -->
 
+## Bootstrap
+
+Keep PatternFly styles independent from Bootstrap.
+
+When writing a PatternFly component don't extend or build on top of Bootstrap structure.
+
+**To style Bootstrap components:**
+
+- Start by overwriting Bootstraps variables on `pf-variables.scss`
+- If it needs further modifications, then create a `pf-component.scss` and base your styles on the original bootstrap scss file.
+- Be precise and accurate, introduce as little modifications as possible to achieve the design.
+- Bootstrap uses a modified version of BEM: `{{block}}-{{element}}-{{modifier}}`.
+
+```sass
+// Overwrite Bootstrap card block
+.card {
+  border: none;
+}
+
+// Overwrite Bootstrap card header element
+.card-header{
+  background: $pf-card-cap-bg;
+  border-bottom-color: $pf-card-border-color;
+}
+
+// Overwrite Bootstrap card footer element
+.card-footer{
+  background: $pf-card-footer-bg;
+  border-top-color: $pf-card-border-color
+}
+
+// Introduces PatternFly card modifier
+.pf-card--accented {
+  border-top: 2px solid $pf-color-blue-300;
+}    
+```
+<!-- ============================================================ -->
+
+## Typography
+
+HTML elements are never referenced in the stylesheets, only classes are used for selection.
+
+Don't add styles to a paragraph or heading tags.
+
+Every typography element has a zero margin and base font-size. Margins and font treatments are added width classes.
+
+```html
+<h1 class="pf-h1">Heading</h1>
+```
+
+A user can opt-in typography vertical rythm by using `.pf-vertical-rythm` class to it's container.
 
 <!-- ============================================================ -->
 
@@ -634,6 +768,13 @@ You can also use [Bootstrap spacing utilities](http://v4-alpha.getbootstrap.com/
 ```html
 <p class="mb-lg">This paragraph has a large bottom margin</p>
 ```
+
+### Comment all magic numbers
+
+If a situation arises where a pixel based value needs entering into the authoring style sheets that isn't already defined in the variables this should serve as a red flag to you.
+
+In the case where a 'magic' number needs entering in the authoring style sheets, ensure a comment is added on the line above to explain its relevance.
+
 
 <!-- ============================================================ -->
 
