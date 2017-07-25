@@ -71,6 +71,9 @@ limitations under the License.
 // transformation from px to rem.
 $pf-font-size-root: 16 !default;
 
+// All patternfly classes must be prefixed with the variable #{$pf-repo}
+$pf-repo: pf;
+
 // PatternFly box shadows
 //
 // -sm is for btns, -md is for cards, -lg is for toast or modals, -inset is for inputs

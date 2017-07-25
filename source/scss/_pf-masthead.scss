@@ -17,7 +17,7 @@ limitations under the License.
 // Masthead
 // --------------------------------------------------
 
-.pf-masthead {
+.#{$pf-repo}-masthead {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -30,7 +30,7 @@ limitations under the License.
   }
 }
 
-.pf-masthead__skip {
+.#{$pf-repo}-masthead__skip {
   display: none;
   @include media-breakpoint-up(lg) {
     display: flex;
@@ -51,12 +51,12 @@ limitations under the License.
   }
 }
 
-.pf-masthead__section {
+.#{$pf-repo}-masthead__section {
   display: flex;
   flex: 0 0 auto;
 }
 
-.pf-masthead__navicon {
+.#{$pf-repo}-masthead__navicon {
   .btn {
     min-height: 48px;
   }
@@ -68,7 +68,7 @@ limitations under the License.
   }
 }
 
-.pf-masthead__brand {
+.#{$pf-repo}-masthead__brand {
   align-self: center;
   padding: $pf-spacer-xxxs 0 ;
   img {
@@ -76,11 +76,11 @@ limitations under the License.
   }
 }
 
-.pf-masthead__brand__icon {
+.#{$pf-repo}-masthead__brand__icon {
   margin: $pf-spacer-xxxs 0 ;
 }
 
-.pf-utilities {
+.#{$pf-repo}-utilities {
   @include media-breakpoint-down(sm) {
     display: none;
   }
@@ -98,7 +98,7 @@ limitations under the License.
       background: $pf-color-black-900;
     }
   }
-  .pf-icon, .fa { margin-right: $pf-spacer-xxxs; }
+  .#{$pf-repo}-icon, .fa { margin-right: $pf-spacer-xxxs; }
   .nav-item + .nav-item,
   .nav-link + .nav-link {
     margin-left: 0;

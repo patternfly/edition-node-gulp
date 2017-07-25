@@ -28,12 +28,12 @@ limitations under the License.
   }
 }
 
-.pf-alert__icon {
+.#{$pf-repo}-alert__icon {
   font-size: $pf-alert-icon-font-size;
   margin-right: $spacer;
 }
 
-.pf-alert__text {
+.#{$pf-repo}-alert__text {
   flex-grow: 1;
 }
 

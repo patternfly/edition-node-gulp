@@ -33,19 +33,11 @@ limitations under the License.
       margin-left: 0;
     }
   }
-  // adjusts the top of the dropdown to visually connect with the tab
-  // .dropdown-menu {
-    // margin-top: 0;
-    // border-top: 0;
-  // }
 }
 
 // Patternfly-style tabs
-.pf-nav-tabs {
+.#{$pf-repo}-nav-tabs {
 
-  // .nav-item {
-  //   margin-bottom: 0;
-  // }
   .nav-link {
     border-width: 0 0 ($nav-tabs-border-width * 2) 0;
     border-color: transparent;

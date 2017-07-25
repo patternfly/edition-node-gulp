@@ -18,12 +18,12 @@ limitations under the License.
 // --------------------------------------------------
 
 
-.pf-view-selector__btn-link {
+.#{$pf-repo}-view-selector__btn-link {
   padding-left: 0;
   padding-right: 0;
   @include hover-focus-active { color: $link-color; }
   &.active {
-    .fa, .pf-icon {
+    .fa, .#{$pf-repo}-icon {
       color: $link-color;
       cursor: default;
     }

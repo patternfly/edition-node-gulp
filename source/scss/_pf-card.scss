@@ -22,12 +22,12 @@ limitations under the License.
 .card {
   @include box-shadow($pf-box-shadow-md);
 }
-// Although .pf-card is a modifier of bootstrap .card, I am treating it as a
+// Although .#{$pf-repo}-card is a modifier of bootstrap .card, I am treating it as a
 // block element. The nesting classes are to keep the code DRY and overwrite
 // bootstrap defaults.
 //
 
-.pf-card {
+.#{$pf-repo}-card {
   border: none;
   box-shadow: none;
   .card-header{
@@ -50,7 +50,7 @@ limitations under the License.
   // .dropdown {
   //   margin: -$pf-spacer-xxs 0;
   // }
-  .dropdown.pf-dropdown--kebab { margin: -$pf-spacer-xxs; }
+  .dropdown.#{$pf-repo}-dropdown--kebab { margin: -$pf-spacer-xxs; }
   &::after {
     @include box-shadow($pf-box-shadow-sm);
     position: absolute;
@@ -62,22 +62,22 @@ limitations under the License.
     pointer-events: none; // needed to avoid interfering with clicking on contents in the card.
   }
 }
-.pf-card__top-element { margin-bottom: $pf-spacer-md; }
-.pf-card--accented { border-top: 2px solid $pf-color-blue-300; }
-.pf-card--select {
+.#{$pf-repo}-card__top-element { margin-bottom: $pf-spacer-md; }
+.#{$pf-repo}-card--accented { border-top: 2px solid $pf-color-blue-300; }
+.#{$pf-repo}-card--select {
   border: 2px solid transparent;
   background-clip: content-box;
   &:hover::after { @include box-shadow($pf-box-shadow-lg); }
   &.active { border-color: $pf-card-border-color-active; }
 }
-.pf-card--multiselect {
+.#{$pf-repo}-card--multiselect {
   .card-block,
   .card-header {
     padding-left: $pf-spacer-xxl;
     padding-right: $pf-spacer-xxl;
   }
 }
-.pf-card__checkbox {
+.#{$pf-repo}-card__checkbox {
   width: $pf-spacer-xxl;
   height: $pf-spacer-xxxxl;
   text-align: center;
@@ -97,7 +97,7 @@ limitations under the License.
       // z-index: auto displays the checkbox on top of the card
       z-index:-1;
       position: relative;
-      .pf-card--select:hover &,
+      .#{$pf-repo}-card--select:hover &,
       &:focus,
       &:checked { z-index: auto; }
     }
