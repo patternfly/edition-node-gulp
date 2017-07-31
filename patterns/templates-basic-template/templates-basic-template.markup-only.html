@@ -3,7 +3,8 @@
   <p>This is a basic template with some of the elements that are avaliable on PatternFly 5 CSS</p>
 
   <nav role="navigation">
-    <ul class="nav nav-tabs " role="tablist">
+
+    <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item" aria-selected="true"><a href="#" role="tab" class="nav-link active">Tab One</a></li>
       <li class="nav-item"><a href="#" role="tab" class="nav-link">Tab Two</a></li>
       <li class="nav-item"><a href="#" role="tab" class="nav-link">Tab Three</a></li>
@@ -12,27 +13,24 @@
 
 
     </ul>
-    <ul class="nav nav-tabs pf-nav-tabs" role="tablist">
-      <li class="nav-item" aria-selected="true"><a href="#" role="tab" class="nav-link active">Secondary Tab One</a></li>
-      <li class="nav-item"><a href="#" role="tab" class="nav-link">Secondary Tab Two</a></li>
-      <li class="nav-item"><a href="#" role="tab" class="nav-link">Secondary Tab Three</a></li>
-      <li class="nav-item"><a href="#" role="tab" class="nav-link disabled">Secondary Disabled</a></li>
-      <li class="nav-item"><a href="#" role="tab" class="nav-link">Secondary Tab Five</a></li>
-      <li class="nav-item dropdown ">
-        <a class="nav-link dropdown-toggle " role="button" aria-haspopup="true" aria-expanded="true" data-toggle="dropdown" href="#">
-            Secondary Menu Dropdown
-          </a>
-        <div class="dropdown-menu" role="menu">
-          <a class="dropdown-item">Action</a></a>
-          <a class="dropdown-item">Another action</a></a>
-          <a class="dropdown-item">Something else here</a></a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item">Separated link</a></a>
-        </div>
+    <ul class="pf-secondary-nav" role="tablist">
+      <li class="pf-secondary-nav__item">
+        <a href="#" role="tab" class="pf-secondary-nav__link" aria-selected="true">Secondary Tab One</a>
+      </li>
+      <li class="pf-secondary-nav__item">
+        <a href="#" role="tab" class="pf-secondary-nav__link">Secondary Tab Two</a>
+      </li>
+      <li class="pf-secondary-nav__item">
+        <a href="#" role="tab" class="pf-secondary-nav__link">Secondary Tab Three</a>
+      </li>
+      <li class="pf-secondary-nav__item">
+        <a href="#" role="tab" class="pf-secondary-nav__link" aria-disabled="true">Secondary Tab Disabled</a>
+      </li>
+      <li class="pf-secondary-nav__item">
+        <a href="#" role="tab" class="pf-secondary-nav__link">Secondary Tab Five</a>
       </li>
     </ul>
   </nav>
-
 
   <div class="row" role="tabpanel">
 
