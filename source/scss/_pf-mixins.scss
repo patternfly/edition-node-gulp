@@ -100,7 +100,7 @@ limitations under the License.
 //
 // Used in conjunction with .vertical-rhythm to apply size, weight, and margins to headings.
 
-@mixin pf-heading-styles($weight: null, $size: null, $margin-top: null, $margin-bottom: null) {
+@mixin pf-heading-styles($weight: null, $size: $font-size-base, $margin-top: null, $margin-bottom: null) {
   font-size: $size;
   font-weight: $weight;
   margin-top: $margin-top;
