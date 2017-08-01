@@ -3354,14 +3354,63 @@ html {
 body {
   font-weight: 500; }
 
-h4, .h4 {
-  font-weight: 600; }
-
 strong {
   font-weight: 700; }
 
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.5rem; }
+p {
+  margin-bottom: 1rem; }
+
+h4 {
+  font-weight: 600; }
+
+.h1,
+.pf-vertical-rhythm h1 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem; }
+
+.h2,
+.pf-vertical-rhythm h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem; }
+
+.h3,
+.pf-vertical-rhythm h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem; }
+
+.h4,
+.pf-vertical-rhythm h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem; }
+
+.pf-vertical-rhythm p, .pf-vertical-rhythm
+ul, .pf-vertical-rhythm
+ol, .pf-vertical-rhythm
+dl, .pf-vertical-rhythm
+blockquote, .pf-vertical-rhythm
+pre, .pf-vertical-rhythm
+td, .pf-vertical-rhythm
+th, .pf-vertical-rhythm
+textarea {
+  margin-bottom: 1rem; }
+  .pf-vertical-rhythm p:last-child, .pf-vertical-rhythm
+  ul:last-child, .pf-vertical-rhythm
+  ol:last-child, .pf-vertical-rhythm
+  dl:last-child, .pf-vertical-rhythm
+  blockquote:last-child, .pf-vertical-rhythm
+  pre:last-child, .pf-vertical-rhythm
+  td:last-child, .pf-vertical-rhythm
+  th:last-child, .pf-vertical-rhythm
+  textarea:last-child {
+    margin-bottom: 0; }
 
 .img-fluid {
   max-width: 100%;
