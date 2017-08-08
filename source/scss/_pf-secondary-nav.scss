@@ -57,9 +57,8 @@ limitations under the License.
   padding-bottom: $pf-secondary-nav-link-padding;
   color: $pf-secondary-nav-color;
 
-  // When https://patternfly.atlassian.net/browse/PTNFLY-2471 is DONE update this to `&[aria-current="true" i]` We need the i flag because aria selector is case sensitive.
-  // .pf-secondary-nav__link[aria-selected="true"]
-  &[aria-selected="true"] {
+  // .pf-secondary-nav__link.is-active
+  &.is-active {
     @include hover-focus-active {
       // The background creates a thicker blue border under the active link
       background-image:
@@ -79,8 +78,8 @@ limitations under the License.
     );
   }
 
-  // .pf-secondary-nav__link[aria-disabled="true"]
-  &[aria-disabled="true"] {
+  // .pf-secondary-nav__link.is-disabled
+  &.is-disabled {
     @include hover-focus-active {
       // The background removes the border when hover on disabled state
       background-image: none;

@@ -24,5 +24,5 @@ The secondary navigation can be used on it is own but it's usually used with pri
 | `.pf-secondary-nav` **Applied to:** `ul` |  **Outcome:** Initiates a secondary underline style menu **Required:** Yes **Remarks:** Always use inside a `.nav` and `.nav-tabs` |
 | `.pf-secondary-nav__item` **Applied to:** `li` |  **Outcome:** This hook is here to provide a place to style the nav item itself. **Required:** No |
 | `.pf-secondary-nav__link` **Applied to:** `a` |  **Outcome:** Gives styles to anchors **Required:** Yes |
-| `aria-selected="true"` **Applied to:** `a` |  **Outcome:** Generates active state **Required:** No |
-| `aria-disabled="true"` **Applied to:** `a` |  **Outcome:** Generates disabled state **Required:** No |
+| `.is-active` **Applied to:** `a` |  **Outcome:** Generates active state **Required:** No |
+| `.is-disabled` **Applied to:** `a` |  **Outcome:** Generates disabled state **Required:** No |
