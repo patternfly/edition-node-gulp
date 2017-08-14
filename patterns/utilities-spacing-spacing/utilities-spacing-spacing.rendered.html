@@ -26,47 +26,31 @@
 </head>
 
 <body class="">
-
-  <div class="card pf-card text-center    ">
-    <div class="card-block">
-      <div class="pf-card__top-element"><span class="pf-icon pf-icon-middleware pf-icon--circle pf-icon--lg" aria-hidden="true"></span>
-      </div>
-      <h2 class="card-title">Card with Large Icon</h2>
-      <p class="card-text">This card has a large title and a large icon, with centered text.</p>
-    </div>
+  <div class="mt-spacer-xxxl mb-spacer-xs p-spacer-sm bg-primary text-white">
+    <p class="py-spacer-xl pl-spacer-md mb-spacer-md bg-info text-white">
+      This paragraph has a lg padding to the top and right and an xl padding to the left as well as a md margin to the bottom and it's inside a div that has an xxxl margin to the top, xs to the bottom and a sm padding around.
+    </p>
   </div>
 
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
     {
       "cssEnabled": false,
-      "patternLineageExists": true,
-      "patternLineages": [{
-        "lineagePattern": "components-card",
-        "lineagePath": "../../patterns/components-cards-card/components-cards-card.rendered.html"
-      }],
-      "lineage": [{
-        "lineagePattern": "components-card",
-        "lineagePath": "../../patterns/components-cards-card/components-cards-card.rendered.html"
-      }],
-      "patternLineageRExists": true,
-      "patternLineagesR": [{
-        "lineagePattern": "templates-cardview",
-        "lineagePath": "../../patterns/templates-cardview-cardview/templates-cardview-cardview.rendered.html"
-      }],
-      "lineageR": [{
-        "lineagePattern": "templates-cardview",
-        "lineagePath": "../../patterns/templates-cardview-cardview/templates-cardview-cardview.rendered.html"
-      }],
-      "patternLineageEExists": true,
-      "patternDesc": "<h2>Overview</h2>\n<p>This is a Bootstrap component, <a href=\"http://v4-alpha.getbootstrap.com/components/card/\">see complete documentation here</a></p>\n<h2>Usage</h2>\n<table>\n<thead>\n<tr>\n<th>Class</th>\n<th>Usage</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>.text-xs-center</code> <strong>Applied to:</strong> <code>.card</code></td>\n<td><strong>Outcome:</strong> Center-aligns the contents of the card   <strong>Required:</strong> No</td>\n</tr>\n<tr>\n<td><code>.pf-card__top-element</code> <strong>Applied to:</strong> child <code>div</code> of <code>.card-block</code> that precedes <code>.card-title</code></td>\n<td><strong>Outcome:</strong> Provides additional margin between the contents in the first div and the title that follows it. This is typically used to wrap the icon that displays above the title. <strong>Required:</strong> If <code>.card-title</code> is a child of <code>.card-block</code> but is not the first child.</td>\n</tr>\n</tbody>\n</table>\n",
+      "patternLineageExists": false,
+      "patternLineages": [],
+      "lineage": [],
+      "patternLineageRExists": false,
+      "patternLineagesR": [],
+      "lineageR": [],
+      "patternLineageEExists": false,
+      "patternDesc": "<h2>Overview</h2>\n<p>PatternFly extends Bootstrap spacing utility classes by adding PatternFly's spacers.</p>\n<p>The classes are named using the format <code>{property}{sides}-{size}</code> for <code>xs</code> and <code>{property}{sides}-{breakpoint}-{size}</code> for <code>sm</code>, <code>md</code>, <code>lg</code>, and <code>xl</code>.</p>\n<p><a href=\"https://getbootstrap.com/docs/4.0/utilities/spacing/\">See complete documentation here</a></p>\n<p>PatternFly size is one of</p>\n<table>\n<thead>\n<tr>\n<th>Size Name</th>\n<th>Usage</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>spacer-xxxs</code></td>\n<td>for classes that set the margin or padding to 3px</td>\n</tr>\n<tr>\n<td><code>spacer-xxs</code></td>\n<td>for classes that set the margin or padding to 7px</td>\n</tr>\n<tr>\n<td><code>spacer-xs</code></td>\n<td>for classes that set the margin or padding to 10px</td>\n</tr>\n<tr>\n<td><code>spacer-sm</code></td>\n<td>for classes that set the margin or padding to 14px</td>\n</tr>\n<tr>\n<td><code>spacer-md</code></td>\n<td>for classes that set the margin or padding to 16px</td>\n</tr>\n<tr>\n<td><code>spacer-lg</code></td>\n<td>for classes that set the margin or padding to 21px</td>\n</tr>\n<tr>\n<td><code>spacer-xl</code></td>\n<td>for classes that set the margin or padding to 24px</td>\n</tr>\n<tr>\n<td><code>spacer-xxl</code></td>\n<td>for classes that set the margin or padding to 28px</td>\n</tr>\n<tr>\n<td><code>spacer-xxxl</code></td>\n<td>for classes that set the margin or padding to 35px</td>\n</tr>\n<tr>\n<td><code>spacer-xxxxl</code></td>\n<td>for classes that set the margin or padding to 42px</td>\n</tr>\n</tbody>\n</table>\n",
       "patternBreadcrumb": {
-        "patternType": "components",
-        "patternSubtype": "cards"
+        "patternType": "utilities",
+        "patternSubtype": "spacing"
       },
       "patternExtension": "hbs",
-      "patternName": "Card Icon Large",
-      "patternPartial": "components-card-icon-large",
+      "patternName": "Spacing",
+      "patternPartial": "utilities-spacing",
       "patternState": "",
       "patternEngineName": "handlebars",
       "extraOutput": {}
