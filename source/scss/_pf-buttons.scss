@@ -17,32 +17,32 @@ limitations under the License.
 // PatternFly Buttons
 // --------------------------------------------------
 
-.btn-primary {
-  @include pf-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-start-bg, $btn-primary-end-bg, $btn-primary-border);
+
+.btn {
+  // Adds a gradient to all btns
+  background-image:
+  linear-gradient(to bottom, rgba($white, .4), transparent 40%), linear-gradient(to top, rgba($gray-900, .1), transparent);
+  // Blend modes don't work on IE yet, but it looks ok anyway
+  background-blend-mode: screen, multiply;
+}
+
+// loops each color on $theme-colors map and creates a darker border than the bootsrap default
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    border-color: darken($value, 10%);
+  }
 }
 
 .btn-secondary {
-  @include pf-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-start-bg, $btn-secondary-end-bg, $btn-secondary-border);
-}
-
-.btn-info {
-  @include pf-button-variant($btn-info-color, $btn-info-bg, $btn-info-start-bg, $btn-info-end-bg,  $btn-info-border);
-}
-.btn-success {
-  @include pf-button-variant($btn-success-color, $btn-success-bg, $btn-success-start-bg, $btn-success-end-bg,  $btn-success-border);
-}
-.btn-warning {
-  @include pf-button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-start-bg, $btn-warning-end-bg,  $btn-warning-border);
-}
-.btn-danger {
-  @include pf-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-start-bg, $btn-danger-end-bg,  $btn-danger-border);
+  border-color:  darken(theme-color("secondary"), 25%);
 }
 
 .btn-link {
-  .fa, .pf-icon {
-    color: $pf-color-black-900;
-  }
-  @include hover-focus-active {
-    .fa, .pf-icon { color: $link-color; }
-  }
+  background-image: none;
+    .fa, .pf-icon {
+      color: $pf-color-black-900;
+    }
+    @include hover-focus-active {
+      .fa, .pf-icon { color: $link-color; }
+    }
 }

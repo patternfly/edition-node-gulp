@@ -31,10 +31,6 @@ strong {
   font-weight: $pf-font-weight-bold;
 }
 
-p {
-  margin-bottom: $pf-typography-margin-bottom;
-}
-
 h1 {
   @include pf-heading-styles();
 }
@@ -76,19 +72,19 @@ h6{
 }
 
 .pf-vertical-rhythm h1 {
-  @include pf-heading-styles($weight: $pf-font-weight-light, $size: $font-size-h1, $margin-top: $pf-headings-margin-top, $margin-bottom: $pf-typography-margin-bottom);
+  @include pf-heading-styles($weight: $pf-font-weight-light, $size: $font-size-h1, $margin-top: $pf-headings-margin-top, $margin-bottom: $headings-margin-bottom);
 }
 
 .pf-vertical-rhythm h2 {
-  @include pf-heading-styles($weight: $pf-font-weight-light, $size: $font-size-h2, $margin-top: $pf-headings-margin-top, $margin-bottom: $pf-typography-margin-bottom);
+  @include pf-heading-styles($weight: $pf-font-weight-light, $size: $font-size-h2, $margin-top: $pf-headings-margin-top, $margin-bottom: $headings-margin-bottom);
 }
 
 .pf-vertical-rhythm h3 {
-  @include pf-heading-styles($weight: $pf-font-weight-light, $size: $font-size-h3, $margin-top: $pf-headings-margin-top, $margin-bottom: $pf-typography-margin-bottom);
+  @include pf-heading-styles($weight: $pf-font-weight-light, $size: $font-size-h3, $margin-top: $pf-headings-margin-top, $margin-bottom: $headings-margin-bottom);
 }
 
 .pf-vertical-rhythm h4 {
-  @include pf-heading-styles($weight: $pf-font-weight-semi-bold, $size: $font-size-h4, $margin-top: $pf-headings-margin-top, $margin-bottom: $pf-typography-margin-bottom);
+  @include pf-heading-styles($weight: $pf-font-weight-semi-bold, $size: $font-size-h4, $margin-top: $pf-headings-margin-top, $margin-bottom: $headings-margin-bottom);
 }
 
 p,
@@ -101,7 +97,7 @@ td,
 th,
 textarea {
   .pf-vertical-rhythm & {
-    margin-bottom: $pf-typography-margin-bottom;
+    margin-bottom: $headings-margin-bottom;
 
     &:last-child {
       margin-bottom: 0; // last item in vertical-rhythm parent has no margin-bottom

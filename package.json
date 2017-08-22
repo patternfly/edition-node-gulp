@@ -36,7 +36,7 @@
     "node": ">=5.0"
   },
   "devDependencies": {
-    "bootstrap": "^4.0.0-alpha.5",
+    "bootstrap": "^4.0.0-beta",
     "font-awesome": "^4.7.0",
     "gulp-sass": "^2.3.2",
     "patternfly-eng-publish": "0.1.0-alpha.18"

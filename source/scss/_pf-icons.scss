@@ -92,7 +92,7 @@ limitations under the License.
   content: $pf-icon-var-enterprise;
 }
 .#{$pf-icon-prefix}-error-circle-o:before {
-  color: $brand-danger;
+  color: theme-color("danger");
   content: $pf-icon-var-error-circle-o;
 }
 .#{$pf-icon-prefix}-export:before {
@@ -137,7 +137,7 @@ limitations under the License.
   content: $pf-icon-var-network;
 }
 .#{$pf-icon-prefix}-ok:before {
-  color: $brand-success;
+  color: theme-color("success");
   content: $pf-icon-var-ok;
 }
 .#{$pf-icon-prefix}-print:before {
@@ -229,7 +229,7 @@ limitations under the License.
   content: $pf-icon-var-volume;
 }
 .#{$pf-icon-prefix}-warning-triangle-o:before {
-  color: $brand-warning;
+  color: theme-color("warning");
   content: $pf-icon-var-warning-triangle-o;
 }
 .#{$pf-icon-prefix}-zone:before {

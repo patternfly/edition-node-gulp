@@ -26,7 +26,7 @@ limitations under the License.
   color: $pf-color-black-300;
   min-height: 1rem;
   @include media-breakpoint-up(md) {
-    padding-left: ($grid-gutter-width-base / 2);
+    // padding-left: ($grid-gutter-width-base / 2);
   }
 }
 

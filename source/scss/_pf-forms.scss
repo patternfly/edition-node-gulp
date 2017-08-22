@@ -20,10 +20,10 @@ limitations under the License.
 
 
 // Fixes color input on chrome
-input[type="color"] {
-  padding: 0;
-  height:  (1rem * $input-line-height) + ($input-padding-y * 2) + ((2 / $pf-font-size-root) * 1rem);
-}
+// input[type="color"] {
+  // padding: 0;
+  // height:  (1rem * $input-line-height) + ($input-padding-y * 2) + ((2 / $pf-font-size-root) * 1rem);
+// }
 
 // Color the validation label
 .has-success,

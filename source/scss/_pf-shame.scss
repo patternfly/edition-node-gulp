@@ -17,14 +17,3 @@ limitations under the License.
 // Patternfly Shame
 // --------------------------------------------------
 // The nest for all our shamefull code.
-
-
-// This is a bug on bootstrap alpha 6, it is fixed on master. Remove this lines
-// after the update to beta.
-input,
-button,
-select,
-optgroup,
-textarea {
-  font-family: inherit;
-}
