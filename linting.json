@@ -1,0 +1,58 @@
+{
+  "rules": {
+"_comment": "CSS Syntax",
+
+// Use soft tabs with two spaces.
+
+// When grouping selectors, keep individual selectors to a single line.
+
+// Include one space before the opening brace of declaration blocks for legibility.
+
+// Include a blank line between rules.
+
+// Place closing braces of declaration blocks on a new line.
+
+// Include one space after `:` for each declaration.
+
+// Each declaration should appear on its own line for more accurate error reporting.
+
+// End all declarations with a semi-colon, even the last one.
+
+// Comma-separated property values should include a space after each comma (e.g., `box-shadow`).
+
+// Don't include spaces after commas within `rgb()`, `rgba()`, `hsl()`, `hsla()`, or `rect()` values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).
+
+// Lowercase all hex values, e.g., `#fff`. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.
+
+// Use shorthand hex values where available, e.g., `#fff` instead of `#ffffff`.
+
+// Quote attribute values in selectors, e.g., `input[type="text"]`.  They’re only optional in some cases, and it’s a good practice for consistency.
+
+// Don't prefix property values or color parameters with a leading zero (e.g., `.5` instead of `0.5` and `-.5em` instead of `-0.5em`).
+
+// Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
+
+// ---- Naming Selectors ---
+
+// Keep classes lowercase.
+
+// Use dashes to separate words (not underscores or camelCase).
+
+// ---- !important ----
+
+// Never use !important to raise specificity
+
+// ---- Spacing ----
+
+// Always use PatternFly spacing variables to define `margin` and `padding`
+
+// ---- Shadows ----
+
+// PatternFly has 6 types of shadows, always variables to apply `box-shadow`
+
+// ---- Operators ----
+
+// For improved readability, wrap all math operations in parentheses with a single space between values, variables, and operators.
+
+  }
+}
