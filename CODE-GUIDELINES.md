@@ -4,7 +4,7 @@ Please enforce these guidelines at all times. Small or large, call out what's in
 
 > Every line of code should appear to be written by a single person, no matter the number of contributors.
 
-This set of rules generate some constraints and conventions. If you ran into instances where a convention isn’t obvious or a solution could be handled in a few different ways, contact the PatternFly community and have a conversation about how to handle it and update this guidelines when needed.
+This set of rules generate some constraints and conventions. If you run into instances where a convention isn’t obvious or a solution could be handled in a few different ways, contact the PatternFly community and have a conversation about how to handle it and update these guidelines when needed.
 
 
 ## Table of content (WIP)
@@ -107,7 +107,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Take the
 
 # CSS
 
-Before we discuss how we write out our rulesets, let’s first familiarise ourselves with relevant terminology:
+Before we discuss how we write out our rulesets, let’s first familiarize ourselves with relevant terminology:
 
 ```
 [selector] {
@@ -128,23 +128,7 @@ For example:
 <!-- ============================================================ -->
 
 ## Syntax
-
-- Use soft tabs with two spaces.
-- When grouping selectors, keep individual selectors to a single line.
-- Include one space before the opening brace of declaration blocks for legibility.
-- Include a blank line between rules.
-- Place closing braces of declaration blocks on a new line.
-- Include one space after `:` for each declaration.
-- Each declaration should appear on its own line for more accurate error reporting.
-- End all declarations with a semi-colon, even the last one.
-- Comma-separated property values should include a space after each comma (e.g., `box-shadow`).
-- Don't include spaces after commas within `rgb()`, `rgba()`, `hsl()`, `hsla()`, or `rect()` values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).
-- Lowercase all hex values, e.g., `#fff`. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.
-- Use shorthand hex values where available, e.g., `#fff` instead of `#ffffff`.
-- Quote attribute values in selectors, e.g., `input[type="text"]`.  They’re only optional in some cases, and it’s a good practice for consistency.
-- Don't prefix property values or color parameters with a leading zero (e.g., `.5` instead of `0.5` and `-.5em` instead of `-0.5em`).
-- Avoid specifying units for zero values, e.g., `margin: 0;` instead of `margin: 0px;`.
-
+Patternfly uses [stylelint](https://stylelint.io) to enforce the following formatting:
 
 ```sass
 // Bad
@@ -165,6 +149,7 @@ For example:
   box-shadow: 0 1px 2px #ccc, inset 0 1px 0 #fff;
 }
 ```
+To see a full list of the lint rules please see [linting.json](linting.json)
 
 <!-- ============================================================ -->
 
@@ -293,7 +278,7 @@ Strive to limit use of shorthand declarations to instances where you must explic
 }
 ```
 
-The Mozilla Developer Network has a great article on [shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) for those unfamiliar with notation and behaviour.
+The Mozilla Developer Network has a great article on [shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) for those unfamiliar with notation and behavior.
 
 <!-- ============================================================ -->
 
@@ -371,12 +356,11 @@ Describes a specific line of code.
 
 Create names with useful or specific meaning via a mechanism that will not inhibit your and your team’s ability to recycle and reuse CSS.
 
-- Keep classes lowercase.
-- Use dashes to separate words (not underscores or camelCase).
+
 - Avoid excessive and arbitrary shorthand notation, e.g., `.btn` is useful for button, but `.s` doesn't mean anything.
 - Keep classes as short and succinct as possible.
 - Use meaningful names, use structural or purposeful names over presentational.
-- Use `.js-*` classes to denote behaviour (as opposed to style), but keep these classes out of your CSS.
+- Use `.js-*` classes to denote behavior (as opposed to style), but keep these classes out of your CSS.
 - Apply these same rules when creating Sass variable names.
 
 ```sass
@@ -750,7 +734,7 @@ If a mixin ends up being longer than 20 lines or so, then it should be either sp
 
 ### @extend
 
-Treat @extend with resect. Use @extend only for maintaining relationships within selectors. If two selectors are characteristically similar, that is the perfect use-case for @extend. If they are unrelated but share some rules, a @mixin might suit you better.
+Treat @extend with respect. Use @extend only for maintaining relationships within selectors. If two selectors are characteristically similar, that is the perfect use-case for @extend. If they are unrelated but share some rules, a @mixin might suit you better.
 
 
 - Stick to extending placeholders, not existing CSS selectors. Use extend on %placeholders primarily, not on actual selectors.
