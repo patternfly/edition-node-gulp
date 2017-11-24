@@ -302,30 +302,35 @@ Use the least number of selectors required to style an element. As a rule, if a 
 
 ##### 1. Modifiers of a style block
 
-Make use of [Sass’s parent selector](https://css-tricks.com/the-sass-ampersand/ mechanism to write BEM modifiers, but don't nest element selectors:
+Make use of [Sass’s parent selector](https://css-tricks.com/the-sass-ampersand/ mechanism to write BEM elements and modifiers, you should only have one block selector:
 
 ```sass
-// Bad
+// Good
 .pf-nav {
+
   &_item {
     ...
   }
+
   &--modifier {
     ...
   }
 }
 
-// Good
+// Bad
 .pf-nav {
-  &--modifier {
-    ...
-  }
+  ...
 }
+
+.pf-nav--modifier {
+  ...
+}
+
 .pf-nav_item {
   ...
 }
 ```
-For longer style blocks don't nest the modifier as it reduced the legibility of the code.
+
 
 ##### 2. Media queries
 
@@ -365,11 +370,11 @@ States of a component should be included as a nested element. This includes hove
 
 ```sass
 .btn {
-    background: $color;
+  background: $color;
 
-    &:hover, &:focus {
-        background: $lighter-color;
-    }
+  &:hover, &:focus {
+    background: $lighter-color;
+  }
 }
 ```
 
@@ -420,45 +425,7 @@ If a mixin ends up being longer than 20 lines or so, then it should be either sp
 
 #### @extend
 
-Treat @extend with respect. Use @extend only for maintaining relationships within selectors. If two selectors are characteristically similar, that is the perfect use-case for @extend. If they are unrelated but share some rules, a @mixin might suit you better.
-
-
-- Stick to extending placeholders, not existing CSS selectors.
-- Extend a placeholder as few times as possible in order to avoid side effects.
-- When extending classes, only extend a class with another class, never a complex selector.
-- Directly extend a %placeholder as few times as possible.
-- Avoid extending general ancestor selectors (e.g. .foo .bar) or general sibling selectors (e.g. .foo ~ .bar). This is what causes selector explosion.
-
-```sass
-%button {
-  display: inline-block;
-  // … button styles
-
-  // Relationship: a %button that is a child of a %modal
-  %modal > & {
-    display: block;
-  }
-}
-
-.button {
-  @extend %button;
-}
-
-// Good
-.modal {
-  @extend %modal;
-}
-
-// Bad
-.modal {
-  @extend %modal;
-
-  > .button {
-    @extend %button;
-  }
-}
-```
-
+Don't use `@extend`.
 
 ## How to write PatternFly selectors
 
