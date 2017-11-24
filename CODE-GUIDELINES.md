@@ -2,9 +2,9 @@
 
 Please enforce these guidelines at all times. Small or large, call out what's incorrect.
 
-> Every line of code should appear to be written by a single person, no matter the number of contributors.
+Every line of code should appear to be written by a single person, no matter the number of contributors.
 
-This set of rules generate some constraints and conventions. If you ran into instances where a convention isn’t obvious or a solution could be handled in a few different ways, contact the PatternFly community, have a conversation about how to handle it and update this guidelines when needed.
+This set of rules generate some constraints and conventions. If you run into instances where a convention isn’t obvious or a solution could be handled in a few different ways, contact the PatternFly community, have a conversation about how to handle it and update this guidelines when needed.
 
 
 ## Table of content
@@ -19,7 +19,7 @@ This set of rules generate some constraints and conventions. If you ran into ins
     - [Lintable CSS rules](#lintable-css-rules)
     - [Shorthand notation](#shorthand-notation)
     - [Typography](#typography)
-    - [Spaces, margins and paddings](#spaces--margins-and-paddings)
+    - [Spaces, margins and padding](#spaces--margins-and-padding)
     - [Shadows](#shadows)
     - [Gradients](#gradients)
   - [Sass](#sass)
@@ -120,7 +120,7 @@ PatternFly is license under the [Apache License, Version 2.0](https://www.apache
 ##### 2. Doc Block
 
 - Includes the name of the component and an optional comment.
-- Leave three blank lines bellow.
+- Leave two blank lines bellow.
 
 ##### 3. Section
 
@@ -169,12 +169,12 @@ Limit the use of shorthand declarations to instances where you must explicitly s
 }
 ```
 
-The Mozilla Developer Network has a great article on [shorthand properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) for those unfamiliar with notation and behaviour. And also [Harry Robert's](https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/) article.
+The [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties) and [Harry Robert](https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/) both have great articles on shorthand properties for those unfamiliar with notation and behaviour.
 
 
 #### Typography
 
-Every typography element has a zero margin and base `font-size`. Margins and font treatments are added width classes.
+Every typography element has a zero margin and base `font-size`. Margins and font treatments are added with classes.
 
 ```html
 <h1 class="pf-h1">Heading</h1>
@@ -201,7 +201,7 @@ The opt-in class `.pf-vertical-rythm` restores vertical rythm and heading font s
 </div>
 ```
 
-#### Spaces, margins and paddings
+#### Spaces, margins and padding
 
 PatternFly has a set of spacer variables:
 
@@ -218,7 +218,7 @@ $pf-spacer-xxxl
 $pf-spacer-xxxxl
 ```
 
-Always them to define `margin` and `padding`
+Always use them to define `margin` and `padding`
 
 ```sass
 .nav-link {
@@ -285,11 +285,11 @@ thead th {
 
 PatternFly uses [Sass](http://sass-lang.com/) to preprocess CSS.
 
-As a general rule don't overcomplicate Sass, keep it easy to parse for normal human.
+As a general rule don't overcomplicate Sass, keep it easy to parse for a normal human.
 
 #### Nesting
 
-Avoid Sass nesting, but if your really have to do it never go more than three layers deep.
+Avoid Sass nesting, if absolutely necessary, don't exceed a three layer depth.
 
 Limit nesting to the following use cases:
 
@@ -331,7 +331,7 @@ For longer style blocks don't nest the modifier as it reduced the legibility of 
 
 Component-specific media queries should be nested inside the component block. Use [Bootstrap responsive breakpoints mixins](http://v4-alpha.getbootstrap.com/layout/overview/#responsive-breakpoints) and remember that PatternFly is mobile first.
 
-**Do progressive enhancement, not gracefully degrade.**
+**Do progressive enhancement, not gracefully degradation.**
 
 
 ```sass
@@ -466,7 +466,7 @@ Since PatternFly is based on Bootstrap, we follow some rules to keep our library
 
 ### Namespace
 
-To avoid conflicts PatternFly prefixes all classes with “pf-”. This also helps differentiates PatternFly and Bootstrap class names.
+To avoid conflicts PatternFly prefixes all classes with “pf-”. This also helps differentiate PatternFly and Bootstrap class names.
 
 ```sass
 // Bad
@@ -491,13 +491,11 @@ UI structures fall into 4 categories:
 
 #### Layout
 
-Layout are containers concern about it's children vertical and horizontal alignment and spacing.
-
-Layout are containers concerned with the vertical and horizontal alignment and spacing of their children. The classes are prefixed with `-l` (after the patterfly prefix `pf-`), for example: `.pf-l-grid` or `.pf-layout-list`.
+Layout are containers concerned with the vertical and horizontal alignment and spacing of their children. The classes are prefixed with `-l` (after the patterfly prefix `pf-`), for example: `.pf-l-grid` or `.pf-l-list`.
 
 #### Components
 
-Components are modular and independent structures concerned about how a thing looks.
+Components are modular and independent structures concerned with how a thing looks.
 
 - A component always touches all four sides of its parent container. No element will have top or left margins and all last children (right or bottom) will have their margins cleared.
 - The component itself never has widths or floats.
@@ -525,7 +523,7 @@ Keep PatternFly styles independent from Bootstrap.
 
 When writing a PatternFly component **don't extend or build on top of Bootstrap structure**.
 
-**Follow this rules to style Bootstrap components:**
+**Follow these rules to style Bootstrap components:**
 
 - Start by overwriting Bootstraps variables on `pf-variables.scss`
 - If it needs further modifications, create a `pf-component.scss` and base your styles on the original bootstrap scss file.
