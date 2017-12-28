@@ -26,20 +26,29 @@
   "bugs": "https://github.com/pattern-lab/edition-node-gulp/issues",
   "author": "Brian Muenzenmeyer",
   "scripts": {
+    "css": "npm-run-all css-lint",
+    "css-lint": "stylelint --config ./node_modules/bootstrap/build/.stylelintrc --syntax scss 'source/scss/**/*.scss'",
     "postinstall": "node scripts/postinstall.js",
     "gulp": "gulp -- ",
     "publish": "ghpages",
-    "publish-travis": "ghpages -t -r origin -b gh-pages -f public"
+    "publish-travis": "ghpages -t -r origin -b gh-pages -f public",
+    "test": "npm-run-all --parallel css"
   },
   "license": "MIT",
   "engines": {
     "node": ">=5.0"
   },
   "devDependencies": {
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^4.0.0-beta.2",
     "font-awesome": "^4.7.0",
     "gulp-sass": "^2.3.2",
-    "patternfly-eng-publish": "0.1.0-alpha.18"
+    "npm-run-all": "^4.1.1",
+    "patternfly-eng-publish": "0.1.0-alpha.18",
+    "stylelint": "^8.1.1",
+    "stylelint-config-recommended-scss": "^2.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-order": "^0.7.0",
+    "stylelint-scss": "^2.1.0"
   },
   "patternfly": {
     "publish": {
