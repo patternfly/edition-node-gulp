@@ -5,7 +5,7 @@
   "dependencies": {
     "browser-sync": "^2.0.0",
     "gulp": "gulpjs/gulp#4.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.2",
     "patternengine-node-handlebars": "^1.0.0",
     "pf-patternlab-node": "2.6.0-alpha-patternfly.2",
     "plugin-node-handlebars-helper-listitems": "0.0.2",
