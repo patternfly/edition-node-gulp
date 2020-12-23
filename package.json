@@ -3,7 +3,7 @@
   "description": "The gulp wrapper around patternlab-node core, providing tasks to interact with the core library and move supporting frontend assets.",
   "version": "0.0.1",
   "dependencies": {
-    "browser-sync": "^2.0.0",
+    "browser-sync": "^2.19.0",
     "gulp": "gulpjs/gulp#4.0",
     "minimist": "^1.2.0",
     "patternengine-node-handlebars": "^1.0.0",
